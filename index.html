@@ -9,118 +9,210 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F7F7EE;--surface:#FFFFFF;--surface-2:#FBFBF5;--ink:#333E48;--ink-2:#5D6873;--ink-3:#8A939A;
-  --line:#E4E3D7;--line-2:#D2D0C2;--navy:#003349;--navy-2:#0B4560;--on-navy:#FFFFFF;
-  --side:#003349;--side-ink:#DCE6E9;--side-ink-2:#8FAAB6;
-  --frost:#C6DCDA;--frost-soft:#E6EFEE;--orange:#FF5C39;--orange-ink:#B5401F;
-  --burg:#6F2C3F;--burg-soft:#F1E3E7;--sun:#D9C756;--sun-soft:#F4EFCB;--sun-ink:#62570F;
-  --good:#2E6A4E;--good-soft:#DCEBE2;--shadow:0 16px 48px rgba(0,26,38,.2);
+  --bg:#FFFFFF;--surface:#FFFFFF;--surface-2:#F7F9FA;--sunk:#F1F4F6;--sand:#EBE0C4;--sand-soft:#F7F3EA;
+  --ink:#003349;--ink-2:#2E5468;--ink-3:#587A91;--line:#E3E9ED;--line-2:#CBD6DD;
+  --navy:#003349;--navy-2:#0B4560;--on-navy:#FFFFFF;--slate:#587A91;--slate-soft:#E8EEF2;
+  --frost:#C6DCDA;--frost-soft:#E6EFEE;--orange:#FF5C39;--orange-ink:#B5401F;--orange-soft:#FFEDE7;
+  --burg:#6F2C3F;--burg-soft:#F3E5E9;--sun:#D9C756;--sun-soft:#F6F1D2;--sun-ink:#62570F;
+  --good:#2E6A4E;--good-soft:#E1EFE6;--band:#003349;--band-ink:#F8F7EE;--band-2:#587A91;
+  --sh-1:0 1px 2px rgba(0,30,45,.04),0 8px 24px rgba(0,30,45,.06);--sh-2:0 24px 64px rgba(0,26,38,.22);
+  --r-lg:18px;--r-md:12px;--r-sm:9px;
   color-scheme:light;box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0D1A21;--surface:#13232C;--surface-2:#172A33;--ink:#E5E9E4;--ink-2:#AEB8BD;--ink-3:#7D8990;
-  --line:#22363F;--line-2:#304751;--navy:#86B9CE;--navy-2:#A3CBDB;--on-navy:#04212E;
-  --side:#06171F;--side-ink:#D3DEE2;--side-ink-2:#7C97A3;
-  --frost:#2C4D52;--frost-soft:#1A3238;--orange:#FF6E4E;--orange-ink:#FF9277;
-  --burg:#E3A6B6;--burg-soft:#3A2129;--sun:#D9C756;--sun-soft:#353015;--sun-ink:#E6D97E;
-  --good:#8ACBA6;--good-soft:#1A3427;--shadow:0 16px 48px rgba(0,0,0,.55);color-scheme:dark;}}
-:root[data-theme="dark"]{
-  --bg:#0D1A21;--surface:#13232C;--surface-2:#172A33;--ink:#E5E9E4;--ink-2:#AEB8BD;--ink-3:#7D8990;
-  --line:#22363F;--line-2:#304751;--navy:#86B9CE;--navy-2:#A3CBDB;--on-navy:#04212E;
-  --side:#06171F;--side-ink:#D3DEE2;--side-ink-2:#7C97A3;
-  --frost:#2C4D52;--frost-soft:#1A3238;--orange:#FF6E4E;--orange-ink:#FF9277;
-  --burg:#E3A6B6;--burg-soft:#3A2129;--sun:#D9C756;--sun-soft:#353015;--sun-ink:#E6D97E;
-  --good:#8ACBA6;--good-soft:#1A3427;--shadow:0 16px 48px rgba(0,0,0,.55);color-scheme:dark;}
+@media (prefers-color-scheme:dark){:root[data-theme="dark-disabled"]{
+  --bg:#0E1A20;--surface:#15242C;--surface-2:#192A33;--sunk:#111F26;--sand:#3A3424;--sand-soft:#252219;
+  --ink:#E7EAE5;--ink-2:#AFB9BE;--ink-3:#7F8B91;--line:#243840;--line-2:#33494F;
+  --navy:#8CC0D4;--navy-2:#A9D0DF;--on-navy:#04212E;--slate:#97B3C5;--slate-soft:#1F3440;
+  --frost:#2C4D52;--frost-soft:#1A3238;--orange:#FF7052;--orange-ink:#FF9277;--orange-soft:#3B231C;
+  --burg:#E3A6B6;--burg-soft:#3A2129;--sun:#D9C756;--sun-soft:#333015;--sun-ink:#E6D97E;
+  --good:#8ACBA6;--good-soft:#1A3427;--band:#0A2E3F;--band-ink:#EEF1EA;--band-2:#97B3C5;
+  --sh-1:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--sh-2:0 24px 64px rgba(0,0,0,.6);color-scheme:dark;}}
+:root[data-theme="dark-disabled"]{
+  --bg:#0E1A20;--surface:#15242C;--surface-2:#192A33;--sunk:#111F26;--sand:#3A3424;--sand-soft:#252219;
+  --ink:#E7EAE5;--ink-2:#AFB9BE;--ink-3:#7F8B91;--line:#243840;--line-2:#33494F;
+  --navy:#8CC0D4;--navy-2:#A9D0DF;--on-navy:#04212E;--slate:#97B3C5;--slate-soft:#1F3440;
+  --frost:#2C4D52;--frost-soft:#1A3238;--orange:#FF7052;--orange-ink:#FF9277;--orange-soft:#3B231C;
+  --burg:#E3A6B6;--burg-soft:#3A2129;--sun:#D9C756;--sun-soft:#333015;--sun-ink:#E6D97E;
+  --good:#8ACBA6;--good-soft:#1A3427;--band:#0A2E3F;--band-ink:#EEF1EA;--band-2:#97B3C5;
+  --sh-1:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--sh-2:0 24px 64px rgba(0,0,0,.6);color-scheme:dark;}
 *,*::before,*::after{box-sizing:inherit}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
-body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--side)}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 button,input,select,textarea{font:inherit;color:inherit}
 a{color:var(--navy)}
+svg{flex:none}
 :focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .num{font-variant-numeric:tabular-nums}
-.muted{color:var(--ink-2)} .faint{color:var(--ink-3)} .small{font-size:12px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.muted{color:var(--ink-2)}.faint{color:var(--ink-3)}.small{font-size:13px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.grow{flex:1}
 
-.app{display:grid;grid-template-columns:232px minmax(0,1fr);height:100%}
-.app.collapsed{grid-template-columns:64px minmax(0,1fr)}
-.side{background:var(--side);color:var(--side-ink);display:flex;flex-direction:column;overflow-y:auto;min-height:0}
-.brand{padding:22px 20px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
-.brand .w{font-family:"Josefin Sans",Inter,sans-serif;font-weight:700;font-size:23px;letter-spacing:.04em;line-height:1;color:#fff;padding-top:3px}
-.brand .s{font-size:12.5px;color:var(--side-ink-2);margin-top:7px}
-.nav{padding:12px 10px;display:flex;flex-direction:column;gap:2px}
-.nav a{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:4px;color:var(--side-ink);text-decoration:none;font-size:13.5px;white-space:nowrap}
-.nav a svg{width:18px;height:18px;flex:none;opacity:.85}
-.nav a:hover{background:rgba(255,255,255,.06)}
-.nav a[aria-current="page"]{background:rgba(198,220,218,.13);color:#fff;box-shadow:inset 3px 0 0 var(--orange)}
-.nav .badge{margin-left:auto;font-size:11px;background:var(--orange);color:#fff;border-radius:3px;padding:0 6px;font-weight:600;line-height:18px}
-.side-foot{margin-top:auto;padding:10px;border-top:1px solid rgba(255,255,255,.08)}
-.collapse-btn{background:none;border:0;color:var(--side-ink-2);display:flex;align-items:center;gap:12px;padding:8px 10px;cursor:pointer;width:100%;border-radius:4px;font-size:12.5px}
-.collapse-btn svg{width:18px;height:18px;flex:none}
+/* shell */
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);height:100%}
+.app.collapsed{grid-template-columns:76px minmax(0,1fr)}
+.side{background:var(--surface-2);border-right:1px solid var(--line);display:flex;flex-direction:column;overflow-y:auto;min-height:0}
+.brand{padding:26px 22px 20px}
+.brand .w{font-family:"Josefin Sans",Inter,sans-serif;font-weight:700;font-size:22px;letter-spacing:.08em;line-height:1;color:var(--navy);padding-top:3px}
+.brand .s{font-size:13px;color:var(--slate);margin-top:6px;font-weight:500}
+.nav{padding:6px 12px;display:flex;flex-direction:column;gap:3px}
+.nav-sep{height:1px;background:var(--line);margin:10px 12px}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:500;white-space:nowrap;transition:background .15s,color .15s}
+.nav a svg{width:20px;height:20px}
+.nav a:hover{background:var(--sunk);color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--navy);color:var(--on-navy);font-weight:600}
+.nav a[aria-current="page"] svg{stroke-width:2.2}
+.nav .badge{margin-left:auto;font-size:11.5px;border-radius:999px;padding:0 8px;font-weight:600;line-height:20px;background:var(--orange-soft);color:var(--orange-ink)}
+.nav a[aria-current="page"] .badge{background:rgba(255,255,255,.18);color:var(--on-navy)}
+.nav a.sig:not([aria-current="page"]) svg{color:var(--orange)}
+.side-foot{margin-top:auto;padding:12px}
+.collapse-btn{background:none;border:0;color:var(--ink-3);display:flex;align-items:center;gap:12px;padding:9px 12px;cursor:pointer;width:100%;border-radius:12px;font-size:13px}
+.collapse-btn:hover{background:var(--sunk)}
+.collapse-btn svg{width:18px;height:18px}
 .app.collapsed .lbl,.app.collapsed .brand .s,.app.collapsed .nav .badge{display:none}
-.app.collapsed .brand{padding:22px 0 18px;text-align:center}
-.app.collapsed .brand .w{font-size:0}.app.collapsed .brand .w::before{content:"E";font-size:23px}
-.app.collapsed .collapse-btn svg{transform:rotate(180deg)}
+.app.collapsed .brand{padding:26px 0 20px;text-align:center}
+.app.collapsed .brand .w{font-size:0}.app.collapsed .brand .w::before{content:"E";font-size:22px}
+.app.collapsed .nav a{justify-content:center}
+.app.collapsed .collapse-btn{justify-content:center}.app.collapsed .collapse-btn svg{transform:rotate(180deg)}
+.tabbar{display:none}
 
 .main{min-width:0;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
-.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 24px;flex-wrap:wrap}
-.search{position:relative;flex:1 1 260px;max-width:440px}
-.search svg{position:absolute;left:10px;top:50%;width:16px;height:16px;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
-.search input{width:100%;padding:7px 10px 7px 34px;border:1px solid var(--line-2);border-radius:4px;background:var(--surface);font-size:13px}
-.sres{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1px solid var(--line-2);border-radius:6px;box-shadow:var(--shadow);z-index:30;max-height:360px;overflow-y:auto}
-.sres button{display:block;width:100%;text-align:left;border:0;background:none;padding:8px 12px;cursor:pointer;font-size:13px;border-bottom:1px solid var(--line)}
-.sres button:hover,.sres button:focus-visible{background:var(--frost-soft)}
-.sres .k{font-size:11.5px;color:var(--ink-3);display:block}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:12px 32px;flex-wrap:wrap}
+.search{position:relative;flex:1 1 260px;max-width:460px}
+.search svg{position:absolute;left:13px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
+.search input{width:100%;padding:9px 14px 9px 38px;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);font-size:14px}
+.sres{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh-2);z-index:30;max-height:380px;overflow-y:auto;padding:6px}
+.sres button{display:block;width:100%;text-align:left;border:0;background:none;padding:9px 12px;cursor:pointer;font-size:14px;border-radius:9px}
+.sres button:hover,.sres button:focus-visible{background:var(--sunk)}
+.sres .k{font-size:12px;color:var(--ink-3);display:block}
 .top .spacer{flex:1}
-.ctl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
-.icon-btn{position:relative;border:1px solid var(--line-2);background:var(--surface);border-radius:4px;width:34px;height:32px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.icon-btn svg{width:17px;height:17px}
-.icon-btn .dot{position:absolute;top:-6px;right:-6px;background:var(--orange);color:#fff;font-size:10.5px;font-weight:600;border-radius:3px;padding:0 4px;line-height:16px}
-.pop{position:absolute;right:0;top:calc(100% + 6px);width:340px;background:var(--surface);border:1px solid var(--line-2);border-radius:6px;box-shadow:var(--shadow);z-index:30}
-.pop-h{padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;font-size:13px}
-.pop button.item{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:9px 14px;cursor:pointer;font-size:12.5px}
-.pop button.item:hover{background:var(--frost-soft)}
+.ctx{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-2);padding:6px 12px;border-radius:999px;background:var(--sunk)}
+.ctx svg{width:15px;height:15px}
+.ctl{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.icon-btn{position:relative;border:1px solid var(--line-2);background:var(--surface);border-radius:999px;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn .dot{position:absolute;top:-5px;right:-5px;background:var(--orange);color:#fff;font-size:10.5px;font-weight:600;border-radius:999px;padding:0 5px;line-height:17px}
+.pop{position:absolute;right:0;top:calc(100% + 8px);width:360px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-2);z-index:30;overflow:hidden}
+.pop-h{padding:14px 16px 8px;font-weight:600;font-size:14px}
+.pop button.item{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:11px 16px;cursor:pointer;font-size:13px}
+.pop button.item:hover{background:var(--sunk)}
+.demo-note{margin:16px 32px 0;padding:10px 14px;border-radius:var(--r-md);color:var(--ink-2);font-size:13px;background:var(--sand-soft);display:flex;gap:12px;align-items:flex-start}
+.demo-note:empty{display:none}
+.demo-note .btn{margin-left:auto}
+.content{padding:28px 32px 72px;max-width:1260px;width:100%;margin:0 auto}
 
-.demo-note{margin:14px 24px 0;padding:8px 12px;border:1px dashed var(--line-2);border-radius:4px;color:var(--ink-2);font-size:12.5px;background:var(--surface-2)}
-.content{padding:18px 24px 56px;max-width:1440px;width:100%}
-.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-.ph h1{font-family:"Josefin Sans",Inter,sans-serif;font-weight:600;font-size:31px;line-height:1.1;margin:0;padding-top:4px;color:var(--navy)}
-.ph p{margin:6px 0 0;color:var(--ink-2)}
+/* headings */
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.ph h1{font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-.022em;margin:0;color:var(--navy)}
+.ph h2{font-weight:650;font-size:22px;letter-spacing:-.015em;margin:0;color:var(--navy)}
+.ph p{margin:8px 0 0;color:var(--ink-2);font-size:16px;max-width:720px}
+.ph-sub{margin:4px 0 16px}.ph-sub p{font-size:14.5px;margin-top:4px}
 .ph .acts{display:flex;gap:8px;flex-wrap:wrap}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--slate);letter-spacing:.01em}
+.eyebrow svg{width:16px;height:16px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 16px;flex-wrap:wrap}
+.sec-h h2{font-size:24px;font-weight:700;letter-spacing:-.018em;margin:0;color:var(--ink)}
+.sec-h p{margin:4px 0 0;color:var(--ink-2);font-size:14.5px}
 
-.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:18px}
-.kpi{background:var(--surface);padding:14px 16px;border:0;text-align:left;font:inherit;color:inherit}
-button.kpi{cursor:pointer} button.kpi:hover{background:var(--surface-2)}
-.kpi .v{font-size:27px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
-.kpi .k{font-size:12.5px;color:var(--ink);margin-top:5px;font-weight:500}
-.kpi .d{font-size:11.5px;color:var(--ink-3);margin-top:2px;line-height:1.35}
-.kpi.alert .v{color:var(--orange-ink)}
-@media (max-width:1150px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:560px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* hero + tiles */
+.hero{margin:8px 0 28px}
+.hero .date{font-size:14px;color:var(--slate);font-weight:600}
+.hero h1{font-size:clamp(32px,4.4vw,48px);line-height:1.05;letter-spacing:-.03em;font-weight:700;margin:6px 0 10px;color:var(--navy)}
+.hero p{font-size:18px;color:var(--ink-2);margin:0;max-width:760px}
+.hero .sum{font-size:15px;color:var(--ink-3);margin-top:8px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.tiles{grid-template-columns:minmax(0,1fr)}}
+.tile{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:20px 22px;display:flex;flex-direction:column;gap:6px;border:1px solid var(--line)}
+.tile .ic{width:42px;height:42px;border-radius:12px;background:var(--slate-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.tile .ic svg{width:22px;height:22px}
+.tile.hot .ic{background:var(--orange-soft);color:var(--orange-ink)}
+.tile .lab{font-size:14px;color:var(--ink-2);font-weight:600}
+.tile .big{font-size:38px;font-weight:700;letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tile .big small{font-size:15px;font-weight:500;color:var(--ink-2);letter-spacing:0;margin-left:6px}
+.tile .txt{font-size:14.5px;color:var(--ink-2);flex:1}
+.tile .btn{align-self:flex-start;margin-top:8px}
 
-.grid2{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:16px;align-items:start}
+/* insight cards */
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.ins{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-1);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:box-shadow .2s,transform .2s}
+.ins:hover{box-shadow:0 2px 4px rgba(0,30,45,.05),0 14px 34px rgba(0,30,45,.09)}
+.ins.feature{grid-column:1/-1;padding:26px 28px}
+.ins.feature h3{font-size:26px}
+.ins-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--slate)}
+.cat svg{width:16px;height:16px}
+.ins h3{margin:0;font-size:19px;line-height:1.25;letter-spacing:-.012em;font-weight:650}
+.ins h3 button{all:unset;cursor:pointer}
+.ins h3 button:hover{text-decoration:underline;text-underline-offset:3px}
+.ins h3 button:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:4px}
+.ins .co-line{font-size:13.5px;color:var(--ink-2)}
+.ins .lede{margin:0;color:var(--ink-2);font-size:15px}
+.ins .blk{font-size:14.5px}
+.ins .blk b{display:block;font-size:12.5px;color:var(--ink-3);font-weight:600;margin-bottom:1px}
+.ins-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px;border-top:1px solid var(--line)}
+.ins-foot .src{font-size:12.5px;color:var(--ink-3);flex:1;min-width:160px}
+.facts2{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 14px;margin:2px 0 0;font-size:14px}
+.facts2 dt{color:var(--ink-3);font-size:13px}.facts2 dd{margin:0;min-width:0;overflow-wrap:anywhere}
+details.use{background:var(--sunk);border-radius:var(--r-md);padding:10px 14px;font-size:14px}
+details.use summary{cursor:pointer;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px;list-style:none}
+details.use summary::-webkit-details-marker{display:none}
+details.use summary svg{width:17px;height:17px}
+details.use[open] summary{margin-bottom:8px}
+details.use dl{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 14px;margin:0}
+details.use dt{color:var(--ink-3);font-size:13px}details.use dd{margin:0}
+@media (max-width:560px){.facts2,details.use dl{grid-template-columns:1fr}}
+
+/* next appointment */
+.nextappt{background:var(--surface);border-radius:22px;box-shadow:var(--sh-1);border:1px solid var(--line);padding:28px 30px;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:28px;align-items:center}
+@media (max-width:760px){.nextappt{grid-template-columns:minmax(0,1fr);padding:22px}}
+.nextappt h2{font-size:30px;letter-spacing:-.02em;margin:6px 0 4px;color:var(--navy);line-height:1.15}
+.nextappt .when{font-size:16px;color:var(--ink-2)}
+.facts{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.fact{font-size:13.5px;background:var(--sunk);border-radius:999px;padding:5px 12px;color:var(--ink)}
+.nextappt .brief-s{font-size:15px;color:var(--ink-2);margin:0 0 16px;max-width:720px}
+.na-prog{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.ring{position:relative;width:120px;height:120px}
+.ring svg{width:120px;height:120px;transform:rotate(-90deg)}
+.ring .rv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.ring circle{fill:none;stroke-width:10}
+.ring .trk{stroke:var(--sunk)}.ring .val{stroke:var(--navy);stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+
+/* secret shopper band */
+.band{background:var(--band);color:var(--band-ink);border-radius:22px;padding:28px 30px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;margin-top:16px}
+@media (max-width:860px){.band{grid-template-columns:minmax(0,1fr)}}
+.band .eyebrow{color:var(--band-2)}
+.band h2{font-size:28px;letter-spacing:-.02em;margin:6px 0 6px;line-height:1.15;color:var(--band-ink)}
+.band p{margin:0;color:var(--band-ink);opacity:.85;font-size:15px}
+.band .acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn.light{background:var(--band-ink);color:var(--band);border-color:var(--band-ink)}
+.btn.ghost-l{background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.35)}
+.btn.ghost-l:hover{border-color:var(--band-ink)}
+
+/* generic surfaces */
+.grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
 .col{display:flex;flex-direction:column;gap:16px;min-width:0}
-@media (max-width:1150px){.grid2{grid-template-columns:minmax(0,1fr)}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;min-width:0}
-.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.panel-h h2{font-size:14.5px;font-weight:600;margin:0}
-.panel-h .sub{font-size:12px;color:var(--ink-3);font-weight:400}
-.panel-b{padding:14px 16px}
-.empty{padding:28px 16px;text-align:center;color:var(--ink-2);font-size:13px}
-.empty .btn{margin-top:10px}
-
-.row-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 16px;border-bottom:1px solid var(--line)}
-.row-item:last-child{border-bottom:0}
-.ri-t{font-weight:500}
-.ri-meta{font-size:12px;color:var(--ink-2);display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin-top:3px}
+@media (max-width:1000px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);min-width:0;overflow:hidden}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 12px;flex-wrap:wrap}
+.panel-h h2{font-size:17px;font-weight:650;margin:0;letter-spacing:-.01em}
+.panel-h .sub{font-size:13px;color:var(--ink-3);font-weight:400}
+.panel-b{padding:16px 20px}
+.empty{padding:32px 20px;text-align:center;color:var(--ink-2);font-size:14.5px}
+.empty .btn{margin-top:12px}
+.row-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 20px;border-top:1px solid var(--line)}
+.panel-h+.row-item,.row-item:first-child{border-top:0}
+.ri-t{font-weight:600}
+.ri-meta{font-size:13px;color:var(--ink-2);display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin-top:4px}
 .ri-acts{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end}
 .chg{font-variant-numeric:tabular-nums;margin-top:2px}
 .chg .prev{color:var(--ink-3);text-decoration:line-through}
-.why{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.why{font-size:14px;color:var(--ink-2);margin-top:3px}
 @media (max-width:700px){.row-item{grid-template-columns:minmax(0,1fr)}.ri-acts{justify-content:flex-start}}
 
-.pill{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:500;line-height:18px;padding:0 7px;border-radius:3px;white-space:nowrap;border:1px solid transparent}
+/* status atoms */
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:22px;padding:0 10px;border-radius:999px;white-space:nowrap;border:1px solid transparent;background:none;font-family:inherit}
+button.pill{cursor:pointer}button.pill:hover{filter:brightness(.97);text-decoration:underline;text-underline-offset:2px}
 .f-current{background:var(--good-soft);color:var(--good)}
 .f-review{background:var(--sun-soft);color:var(--sun-ink)}
 .f-stale{border:1px dashed var(--ink-3);color:var(--ink-2)}
@@ -132,170 +224,283 @@ button.kpi{cursor:pointer} button.kpi:hover{background:var(--surface-2)}
 .vs-Pending{border-color:var(--sun);color:var(--sun-ink)}
 .vs-More{border-color:var(--orange);color:var(--orange-ink)}
 .vs-Rejected{border-color:var(--burg);color:var(--burg)}
-.chip{font-size:10.5px;padding:0 5px;border-radius:3px;line-height:16px;font-weight:500;white-space:nowrap;display:inline-block;vertical-align:1px}
+.chip{font-size:11px;padding:0 7px;border-radius:999px;line-height:18px;font-weight:600;white-space:nowrap;display:inline-block;vertical-align:2px;margin-left:4px}
 .chip.demo{border:1px dashed var(--ink-3);color:var(--ink-2)}
-.chip.cand{border:1px solid var(--frost);background:var(--frost-soft);color:var(--ink-2)}
+.chip.cand{background:var(--slate-soft);color:var(--slate)}
 .chip.arch{border:1px solid var(--line-2);color:var(--ink-3)}
-.flag{display:inline-block;font-size:11px;color:var(--orange-ink);border:1px solid var(--orange);border-radius:3px;padding:0 5px;line-height:16px;margin-top:3px;white-space:nowrap}
-.conf{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2);white-space:nowrap}
+.flag{display:inline-block;font-size:12px;color:var(--orange-ink);background:var(--orange-soft);border-radius:999px;padding:0 9px;line-height:20px;margin-top:4px;white-space:nowrap}
+.conf{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2);white-space:nowrap;background:none;border:0;padding:2px 4px;border-radius:6px;font-family:inherit}
+button.conf{cursor:pointer}button.conf:hover{background:var(--sunk)}
 .conf i{display:inline-flex;gap:2px;font-style:normal}
-.conf i b{width:4px;height:11px;background:var(--line-2);border-radius:1px}
+.conf i b{width:4px;height:12px;background:var(--line-2);border-radius:2px}
 .conf i b.on{background:var(--navy)}
+.score{font-size:12px;font-weight:650;line-height:22px;padding:0 10px;border-radius:999px;white-space:nowrap;border:1px solid transparent;flex:none;display:inline-block}
+.score.s5{background:var(--orange);color:#fff}.score.s4{background:var(--sun-soft);color:var(--sun-ink);border-color:var(--sun)}.score.s3{border-color:var(--sun);color:var(--sun-ink)}.score.s2,.score.s1{border-color:var(--line-2);color:var(--ink-3)}.score.opp{background:var(--good-soft);color:var(--good)}
 
-.ev{all:unset;box-sizing:border-box;cursor:pointer;display:block;padding:1px 0 1px 8px;border-left:3px solid var(--line-2);min-width:96px;margin:1px 0}
+.ev{all:unset;box-sizing:border-box;cursor:pointer;display:block;padding:1px 0 1px 9px;border-left:3px solid var(--line-2);min-width:96px;margin:2px 0;border-radius:1px}
 .ev:hover .val{text-decoration:underline}
 .ev:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
-.ev .val{font-variant-numeric:tabular-nums;font-weight:500;color:var(--ink)}
-.ev .lbl2{color:var(--ink-2);font-size:11.5px;margin-right:4px}
-.ev .m{display:block;font-size:11px;color:var(--ink-3);line-height:1.35}
+.ev .val{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.ev .lbl2{color:var(--ink-2);font-size:12px;margin-right:4px}
+.ev .m{display:block;font-size:11.5px;color:var(--ink-3);line-height:1.35}
 .ev[data-f="current"]{border-left-color:var(--good)}
 .ev[data-f="review"]{border-left-color:var(--sun)}
 .ev[data-f="stale"]{border-left-style:dashed;border-left-color:var(--ink-3)}
 .ev[data-f="expired"]{border-left-color:var(--burg)}
 .ev[data-f="conflict"]{border-left-color:var(--orange)}
 .ev[data-f="unverified"]{border-left-style:dotted;border-left-color:var(--ink-3)}
-.nv{color:var(--ink-3);font-style:italic;font-size:12.5px;white-space:nowrap}
+.nv{color:var(--ink-3);font-style:italic;font-size:13px;white-space:nowrap}
 
+/* tables */
 .tw{overflow-x:auto}
-table.t{width:100%;border-collapse:collapse;font-size:13px}
-.t th{background:var(--surface-2);text-align:left;font-weight:500;color:var(--ink-2);font-size:12px;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:bottom}
-.t td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t{width:100%;border-collapse:collapse;font-size:13.5px}
+.t th{background:var(--surface-2);text-align:left;font-weight:600;color:var(--ink-3);font-size:12px;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:bottom}
+.t td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
 .t tbody tr:last-child td{border-bottom:0}
 .t tr.click{cursor:pointer}.t tr.click:hover td{background:var(--surface-2)}
-.t tr.base td{background:var(--frost-soft)}
+.t tr.base td{background:var(--slate-soft)}
 .t tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--navy)}
 .t .r{text-align:right}.t .nw{white-space:nowrap}
-.t td.cb,.t th.cb{width:34px;padding-right:0}
+.t td.cb,.t th.cb{width:36px;padding-right:0}
 
-.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:4px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;line-height:1.3;text-decoration:none}
+/* controls */
+.btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:550;cursor:pointer;white-space:nowrap;line-height:1.3;text-decoration:none;transition:background .15s,border-color .15s,transform .1s}
+.btn svg{width:16px;height:16px}
 .btn:hover{border-color:var(--ink-3)}
+.btn:active{transform:scale(.98)}
 .btn.pri{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
 .btn.pri:hover{background:var(--navy-2);border-color:var(--navy-2)}
-.btn.sm{padding:3px 9px;font-size:12px}
-.btn.link{border-color:transparent;background:none;padding:3px 6px;color:var(--navy)}
+.btn.lg{padding:11px 22px;font-size:15px}
+.btn.sm{padding:4px 12px;font-size:13px}
+.btn.link{border-color:transparent;background:none;padding:4px 8px;color:var(--navy)}
 .btn.link:hover{text-decoration:underline}
 .btn.warn{color:var(--burg);border-color:var(--burg-soft)}
-.btn[disabled]{opacity:.45;cursor:not-allowed}
-
-.in{border:1px solid var(--line-2);background:var(--surface);border-radius:4px;padding:6px 10px;font-size:13px;min-height:32px;max-width:100%}
-textarea.in{min-height:84px;resize:vertical;width:100%;line-height:1.45}
-.field{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--ink-2);min-width:0}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.in{border:1px solid var(--line-2);background:var(--surface);border-radius:10px;padding:8px 12px;font-size:14px;min-height:38px;max-width:100%}
+textarea.in{min-height:90px;resize:vertical;width:100%;line-height:1.45}
+.field{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink-2);min-width:0}
 .field .in{width:100%}
-.field .hint{font-size:11.5px;color:var(--ink-3)}
-.field .err{font-size:11.5px;color:var(--orange-ink)}
+.field .hint{font-size:12px;color:var(--ink-3)}
+.field .err{font-size:12px;color:var(--orange-ink)}
 .field .err:empty{display:none}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
 .span2{grid-column:1/-1}
 @media (max-width:600px){.form-grid{grid-template-columns:1fr}}
-.checks{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--ink)}
+.checks{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--ink)}
 .checks label{display:inline-flex;gap:6px;align-items:center}
-.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-.filters .in{min-height:30px;padding:4px 8px}
-.tog{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-2);cursor:pointer}
-.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:4px;overflow:hidden;background:var(--surface)}
-.seg button{border:0;background:none;padding:5px 12px;font-size:12.5px;cursor:pointer;border-left:1px solid var(--line-2)}
-.seg button:first-child{border-left:0}
-.seg button[aria-pressed="true"]{background:var(--navy);color:var(--on-navy)}
-.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);overflow-x:auto}
-.tabs button{border:0;background:none;padding:10px 12px;font-size:13px;color:var(--ink-2);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
-.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--orange);font-weight:500}
-.tabs .n{font-size:11px;color:var(--ink-3);margin-left:4px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.filters .in{min-height:36px;padding:6px 12px;border-radius:999px}
+.tog{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-2);cursor:pointer}
+.seg{display:inline-flex;border-radius:999px;background:var(--sunk);padding:3px;gap:2px}
+.seg button{border:0;background:none;padding:6px 14px;font-size:13.5px;cursor:pointer;border-radius:999px;color:var(--ink-2);font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,30,45,.12);font-weight:600}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tabs button{border:0;background:none;padding:12px 14px;font-size:14px;color:var(--ink-2);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;font-weight:500}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--navy);font-weight:650}
+.tabs .n{font-size:12px;color:var(--ink-3);margin-left:5px}
+.qtabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;margin:4px 0 18px}
+.qtabs button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:var(--surface);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:550;cursor:pointer;white-space:nowrap;color:var(--ink-2)}
+.qtabs button svg{width:17px;height:17px}
+.qtabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.qtabs .n{font-size:12px;opacity:.75}
 
-.dl{display:grid;grid-template-columns:150px minmax(0,1fr);gap:7px 16px;font-size:13px;margin:0}
-.dl dt{color:var(--ink-2)}.dl dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.dl{display:grid;grid-template-columns:160px minmax(0,1fr);gap:8px 16px;font-size:14px;margin:0}
+.dl dt{color:var(--ink-3)}.dl dd{margin:0;min-width:0;overflow-wrap:anywhere}
 @media (max-width:520px){.dl{grid-template-columns:1fr}.dl dt{margin-top:6px}}
-
-.bars{display:flex;flex-direction:column;gap:8px}
-.bar-row{display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr) 24px;gap:10px;align-items:center;font-size:12.5px}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bar-row{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) 28px;gap:12px;align-items:center;font-size:13.5px}
 .bar-row .lb{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar{height:10px;background:var(--frost-soft);border-radius:2px;overflow:hidden}
-.bar span{display:block;height:100%;background:var(--navy)}
+.bar{height:8px;background:var(--sunk);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--slate);border-radius:999px}
 .bar-row .c{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
-.legend{display:flex;gap:8px 14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);align-items:center}
+.legend{display:flex;gap:8px 12px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);align-items:center}
+.kstrip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+@media (max-width:1000px){.kstrip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.kstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kstrip>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px}
+.kstrip .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}.kstrip .k{font-size:12.5px;color:var(--ink-2)}
+details.more{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg)}
+details.more>summary{cursor:pointer;padding:14px 20px;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary svg{width:16px;height:16px;transition:transform .2s}
+details.more[open]>summary svg{transform:rotate(90deg)}
+details.more>.inner{border-top:1px solid var(--line)}
 
-.scrim{position:fixed;inset:0;background:rgba(0,20,30,.38);z-index:40}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(640px,100%);background:var(--surface);z-index:41;box-shadow:var(--shadow);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:slide .18s ease-out}
-.drawer.wide{width:min(980px,100%)}
-@keyframes slide{from{transform:translateX(28px);opacity:.5}}
-.dh{padding:16px 20px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+/* appointments */
+.alist{display:flex;flex-direction:column;gap:12px}
+.appt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:16px 20px;display:grid;grid-template-columns:92px minmax(0,1fr) 170px auto;gap:18px;align-items:center}
+@media (max-width:900px){.appt{grid-template-columns:72px minmax(0,1fr)}.appt .prep,.appt .acts{grid-column:2}}
+.appt .when{border-right:1px solid var(--line);padding-right:14px}
+.appt .when .d{font-size:12.5px;color:var(--slate);font-weight:600}
+.appt .when .tm{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.appt h3{margin:0;font-size:17px;font-weight:650}
+.appt h3 button{all:unset;cursor:pointer}.appt h3 button:hover{text-decoration:underline}
+.appt h3 button:focus-visible{outline:2px solid var(--orange)}
+.appt .meta{font-size:13.5px;color:var(--ink-2);margin-top:3px;display:flex;gap:4px 12px;flex-wrap:wrap}
+.appt .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.pbar{height:8px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.pbar span{display:block;height:100%;background:var(--navy);border-radius:999px;transition:width .5s ease}
+.prep .pl{font-size:12.5px;color:var(--ink-2);margin-top:5px}
+
+/* steps (guided prep, how it works) */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;position:relative;padding-bottom:22px}
+.step::before{content:"";position:absolute;left:19px;top:40px;bottom:0;width:2px;background:var(--line)}
+.step:last-child::before{display:none}
+.step .sn{width:40px;height:40px;border-radius:50%;background:var(--slate-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.step.done .sn{background:var(--navy);color:var(--on-navy)}
+.step .sn svg{width:18px;height:18px}
+.step h3{margin:7px 0 6px;font-size:17px;font-weight:650;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step h4{margin:12px 0 4px;font-size:13px;color:var(--ink-3);font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.step ul{margin:0;padding-left:18px;font-size:14.5px}.step li{margin:4px 0}
+.step .done-t{display:inline-flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-2);margin-top:10px;cursor:pointer;background:var(--sunk);padding:6px 12px;border-radius:999px}
+.how3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 6px;position:relative}
+@media (max-width:820px){.how3{grid-template-columns:minmax(0,1fr)}}
+.how3 .hs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;position:relative}
+.how3 .hs .ic{width:40px;height:40px;border-radius:12px;background:var(--slate-soft);color:var(--navy);display:flex;align-items:center;justify-content:center}
+.how3 .hs .ic svg{width:21px;height:21px}
+.how3 .hs .k{font-size:12.5px;color:var(--slate);font-weight:600;margin-top:12px}
+.how3 .hs h3{margin:2px 0 6px;font-size:17px}
+.how3 .hs p{margin:0;font-size:14px;color:var(--ink-2)}
+@media (min-width:821px){.how3 .hs:not(:last-child)::after{content:"";position:absolute;right:-13px;top:38px;width:10px;height:10px;border-top:2px solid var(--line-2);border-right:2px solid var(--line-2);transform:rotate(45deg);background:none}}
+.ss-hero{background:var(--sand-soft);border-radius:24px;padding:30px 32px;margin-bottom:6px}
+.ss-hero h1{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;line-height:1.08;margin:8px 0 10px;color:var(--navy)}
+.ss-hero p{font-size:16.5px;color:var(--ink-2);margin:0 0 18px;max-width:780px}
+.ss-hero .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* compare cards */
+.cmp-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:12px}
+.cc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cc.is-base{border:2px solid var(--navy)}
+.cc .tagl{font-size:12.5px;font-weight:650;color:var(--slate);display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.cc.is-base .tagl{color:var(--navy)}
+.cc h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.cc .price{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.hbar{height:6px;background:var(--sunk);border-radius:999px;overflow:hidden}
+.hbar span{display:block;height:100%;background:var(--slate);border-radius:999px}
+.cc.is-base .hbar span{background:var(--navy)}
+.cc dl{display:grid;grid-template-columns:92px minmax(0,1fr);gap:5px 10px;margin:6px 0 0;font-size:13.5px}
+.cc dt{color:var(--ink-3);font-size:12.5px}.cc dd{margin:0;min-width:0}
+.diffs{list-style:none;margin:4px 0 0;padding:10px 0 0;border-top:1px solid var(--line);font-size:13.5px;display:flex;flex-direction:column;gap:5px}
+.diffs li{display:flex;gap:6px}.diffs .plus{color:var(--good);font-weight:700}.diffs .minus{color:var(--orange-ink);font-weight:700}
+.cc .foot{font-size:12.5px;color:var(--ink-3);margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* competitor cards */
+.co-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.co{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:18px 20px;cursor:pointer;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s}
+.co:hover{box-shadow:0 2px 4px rgba(0,30,45,.05),0 14px 34px rgba(0,30,45,.09)}
+.co h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.co .sub2{font-size:13.5px;color:var(--ink-2)}
+.co .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:6px 0;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.co .stats b{display:block;font-size:16px;font-variant-numeric:tabular-nums}.co .stats span{font-size:12px;color:var(--ink-3)}
+.co .health{display:flex;gap:5px;flex-wrap:wrap}
+.co .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+
+/* drawers + modals */
+.scrim{position:fixed;inset:0;background:rgba(0,20,30,.32);z-index:40;animation:fade .2s ease-out}
+@keyframes fade{from{opacity:0}}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(660px,100%);background:var(--surface);z-index:41;box-shadow:var(--sh-2);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:slide .22s cubic-bezier(.2,.8,.2,1);border-radius:22px 0 0 22px}
+.drawer.wide{width:min(1000px,100%)}
+@keyframes slide{from{transform:translateX(40px);opacity:.4}}
+.dh{padding:20px 24px 14px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
 .dh .t{flex:1;min-width:0}
-.dh h2{font-family:"Josefin Sans",Inter,sans-serif;font-weight:600;font-size:23px;margin:0;line-height:1.15;padding-top:3px;color:var(--navy)}
-.dh .s{font-size:12.5px;color:var(--ink-2);margin-top:4px;display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center}
-.db{overflow-y:auto;padding:16px 20px 24px;flex:1}
-.df{padding:12px 20px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
-.sec{margin-top:20px}.sec:first-child{margin-top:0}
-.sec h3{font-size:13.5px;font-weight:600;margin:0 0 8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,calc(100% - 24px));max-height:calc(100% - 48px);background:var(--surface);z-index:51;border-radius:6px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.dh h2{font-weight:700;font-size:24px;margin:0;line-height:1.2;letter-spacing:-.018em;color:var(--navy)}
+.dh .s{font-size:13.5px;color:var(--ink-2);margin-top:5px;display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center}
+.db{overflow-y:auto;padding:20px 24px 28px;flex:1}
+.df{padding:14px 24px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.sec{margin-top:24px}.sec:first-child{margin-top:0}
+.sec h3{font-size:15px;font-weight:650;margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(640px,calc(100% - 24px));max-height:calc(100% - 48px);background:var(--surface);z-index:51;border-radius:22px;box-shadow:var(--sh-2);display:flex;flex-direction:column}
 .scrim.m{z-index:50}
-@media (prefers-reduced-motion:reduce){.drawer{animation:none}}
+.delta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--sunk);border-radius:var(--r-md);padding:14px 16px}
+.delta .k{display:block;font-size:12px;color:var(--ink-3);font-weight:600}
+.delta b{font-size:18px;font-variant-numeric:tabular-nums}
+.delta .old b{color:var(--ink-3);text-decoration:line-through;font-weight:600}
+.delta .arr{color:var(--ink-3);font-size:20px}
+.statusrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tip{position:fixed;z-index:70;width:300px;max-width:calc(100vw - 24px);background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-2);padding:14px 16px;font-size:13.5px;animation:fade .15s ease-out}
+.tip.up{transform:translateY(-100%)}
+.tip .tip-h{font-weight:650;font-size:14px;margin-bottom:4px}
+.tip p{margin:0 0 8px}
 
 .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);margin-left:6px}
-.timeline li{position:relative;padding:0 0 14px 16px;font-size:13px}
-.timeline li::before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--navy)}
+.timeline li{position:relative;padding:0 0 16px 18px;font-size:14px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--navy)}
 .timeline li.rej::before{border-color:var(--ink-3)}
-.timeline .when{font-size:11.5px;color:var(--ink-3)}
-
-.brief ul{margin:0;padding-left:18px}.brief li{margin:4px 0}
-.tag{font-size:10.5px;font-weight:500;padding:0 6px;border-radius:3px;line-height:16px;white-space:nowrap}
-.tag.st{background:var(--frost-soft);color:var(--ink-2);border:1px solid var(--frost)}
+.timeline .when{font-size:12px;color:var(--ink-3)}
+.brief ul{margin:0;padding-left:18px}.brief li{margin:5px 0}
+.tag{font-size:11px;font-weight:600;padding:0 8px;border-radius:999px;line-height:18px;white-space:nowrap}
+.tag.st{background:var(--slate-soft);color:var(--slate)}
 .tag.rec{border:1px solid var(--sun);color:var(--sun-ink)}
 .tag.vf{border:1px solid var(--good);color:var(--good)}
 .tag.cau{border:1px solid var(--orange);color:var(--orange-ink)}
-.srcref{font-size:11.5px}
+.srcref{font-size:12px}
 .srcref button{all:unset;cursor:pointer;color:var(--navy);text-decoration:underline;text-underline-offset:2px}
 .srcref button:focus-visible{outline:2px solid var(--orange)}
-.check{display:flex;gap:8px;align-items:center;font-size:13px;padding:3px 0}
-
-.integ{display:grid;grid-template-columns:minmax(0,220px) 130px minmax(0,1fr);gap:4px 18px;padding:14px 16px;border-bottom:1px solid var(--line);align-items:start}
-.integ:last-child{border-bottom:0}
-.integ .nm{font-weight:600}
+.check{display:flex;gap:9px;align-items:center;font-size:14px;padding:4px 0}
+.integ{display:grid;grid-template-columns:minmax(0,220px) 140px minmax(0,1fr);gap:4px 18px;padding:16px 20px;border-top:1px solid var(--line);align-items:start;font-size:14px}
+.panel-h+.integ{border-top:0}
+.integ .nm{font-weight:650}
 @media (max-width:760px){.integ{grid-template-columns:minmax(0,1fr)}}
 .st-Connected{border-color:var(--good);color:var(--good)}
 .st-Setup{border-color:var(--sun);color:var(--sun-ink)}
 .st-Demo{border:1px dashed var(--ink-3);color:var(--ink-2)}
+.toasts{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.toast{background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:14px;font-size:14px;box-shadow:var(--sh-2);max-width:400px;animation:fade .2s ease-out}
+.toast.err{box-shadow:inset 4px 0 0 var(--orange),var(--sh-2)}
 
-.toasts{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.toast{background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:4px;font-size:13px;box-shadow:var(--shadow);max-width:380px}
-.toast.err{box-shadow:inset 3px 0 0 var(--orange),var(--shadow)}
-
-@media (max-width:860px){
-  .app,.app.collapsed{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
-  .side{flex-direction:row;align-items:center;overflow-x:auto;overflow-y:hidden}
-  .brand{border:0;padding:12px 14px;flex:none}.brand .s{display:none}
-  .app.collapsed .brand .w{font-size:23px}.app.collapsed .brand .w::before{content:none}
-  .app.collapsed .lbl{display:inline}
-  .nav{flex-direction:row;padding:6px}.nav a{padding:8px 10px}
-  .nav a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--orange)}
-  .side-foot{display:none}
-  .top{padding:10px 14px}.content{padding:16px 14px 48px}.demo-note{margin:12px 14px 0}
-  .pop{width:min(340px,calc(100vw - 28px))}
-}
-.ss-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line-2);border-radius:6px;padding:14px 16px;margin-bottom:12px}
+/* secret shopper alert cards */
+.ss-card{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--line-2);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:18px 22px;margin-bottom:14px}
 .ss-card.s5{border-left-color:var(--orange)}.ss-card.s4{border-left-color:var(--sun)}.ss-card.opp{border-left-color:var(--good)}
 .ss-head{display:flex;gap:10px;align-items:flex-start}
-.ss-head h3{margin:0;font-size:15px;font-weight:600;line-height:1.4}
-.score{font-size:11.5px;font-weight:600;line-height:20px;padding:0 8px;border-radius:3px;white-space:nowrap;border:1px solid transparent;flex:none;display:inline-block}
-.score.s5{background:var(--orange);color:#fff}.score.s4{background:var(--sun-soft);color:var(--sun-ink);border-color:var(--sun)}.score.s3{border-color:var(--sun);color:var(--sun-ink)}.score.s2,.score.s1{border-color:var(--line-2);color:var(--ink-3)}.score.opp{background:var(--good-soft);color:var(--good)}
-.ss-dl{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 16px;margin:12px 0 0;font-size:13px}.ss-dl dt{color:var(--ink-2)}.ss-dl dd{margin:0}
+.ss-head h3{margin:0;font-size:17px;font-weight:650;line-height:1.35}
+.ss-dl{display:grid;grid-template-columns:160px minmax(0,1fr);gap:7px 16px;margin:14px 0 0;font-size:14px}.ss-dl dt{color:var(--ink-3)}.ss-dl dd{margin:0}
 @media (max-width:560px){.ss-dl{grid-template-columns:1fr}}
-.ss-banner{margin-top:10px;padding:6px 10px;border-radius:4px;font-size:12.5px;border:1px solid var(--orange);color:var(--orange-ink)}
-.ss-banner.note{border-color:var(--sun);color:var(--sun-ink);margin:14px 0 0}
-.ss-meta{display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--ink-2);margin-top:12px}
+.ss-banner{margin-top:10px;padding:8px 12px;border-radius:10px;font-size:13.5px;background:var(--orange-soft);color:var(--orange-ink)}
+.ss-banner.note{background:var(--sun-soft);color:var(--sun-ink);margin:16px 0 0}
+.ss-meta{display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--ink-2);margin-top:12px}
 .ss-acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-details.how{margin-top:10px;font-size:12px;color:var(--ink-2)}details.how summary{cursor:pointer;color:var(--ink-3)}
-.mini3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;max-width:520px}
-.mini3>div{background:var(--surface);padding:10px 14px}.mini3 .v{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}.mini3 .k{font-size:12px;color:var(--ink-2)}
-.bc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin-top:4px}.bc-grid .sec{margin-top:20px}
+details.how{margin-top:10px;font-size:13px;color:var(--ink-2)}details.how summary{cursor:pointer;color:var(--ink-3)}
+.mini3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:520px}
+.mini3>div{background:var(--sunk);border-radius:var(--r-md);padding:12px 14px}.mini3 .v{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}.mini3 .k{font-size:12.5px;color:var(--ink-2)}
+.bc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 28px;margin-top:4px}.bc-grid .sec{margin-top:22px}
 @media (max-width:900px){.bc-grid{grid-template-columns:minmax(0,1fr)}}
-.qa{padding:10px 0;border-bottom:1px solid var(--line)}.qa:last-child{border-bottom:0}.qa .q{font-weight:500}.qa .a{color:var(--ink-2);margin-top:3px;font-size:13px}
+.qa{padding:12px 0;border-top:1px solid var(--line)}.qa:first-child{border-top:0}.qa .q{font-weight:600}.qa .a{color:var(--ink-2);margin-top:3px;font-size:14px}
+.group-h{font-size:14px;font-weight:650;color:var(--ink-2);margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:860px){
+  .app,.app.collapsed{grid-template-columns:minmax(0,1fr)}
+  .side{display:none}
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);background:color-mix(in srgb,var(--surface) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px 4px env(safe-area-inset-bottom,0px)}
+  .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;color:var(--ink-3);text-decoration:none;font-size:10.5px;font-weight:600;border-radius:10px;position:relative;min-width:0}
+  .tabbar a svg{width:22px;height:22px}
+  .tabbar a[aria-current="page"]{color:var(--navy)}
+  .tabbar a[aria-current="page"]::after{content:"";position:absolute;top:0;left:30%;right:30%;height:3px;border-radius:3px;background:var(--navy)}
+  .tabbar .tb-dot{position:absolute;top:3px;left:calc(50% + 6px);width:8px;height:8px;border-radius:50%;background:var(--orange)}
+  .top{padding:10px 16px}.top .ctx{display:none}
+  .content{padding:20px 16px 110px}.demo-note{margin:12px 16px 0}
+  .pop{width:min(360px,calc(100vw - 28px))}
+  .toasts{bottom:calc(84px + env(safe-area-inset-bottom,0px));right:12px;left:12px;align-items:stretch}
+  .drawer{border-radius:0}
+  .nextappt h2{font-size:24px}
+}
 #print-root{display:none}
 @media print{
   body.printing>*:not(#print-root){display:none!important}
   body.printing #print-root{display:block!important;padding:0;color:#000;font-size:11px}
   html,body{height:auto;background:#fff}:root{padding:0}body::before{display:none}
   #print-root .t th{background:#eee;color:#000}#print-root .t td{border-color:#ccc}
-  #print-root h1{font-family:"Josefin Sans",Inter,sans-serif;color:#003349;font-size:22px;margin:0 0 4px}
+  #print-root h1{color:#003349;font-size:22px;margin:0 0 4px}
 }
+.demo-note svg{width:18px;height:18px;color:var(--slate);margin-top:1px}
+.group-h svg{width:18px;height:18px;color:var(--slate)}
+.step h3 svg{width:18px;height:18px;color:var(--slate)}
+.dh .eyebrow svg{width:15px;height:15px}
+.co h3 button{all:unset;cursor:pointer}.co h3 button:hover{text-decoration:underline;text-underline-offset:3px}
+.co h3 button:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:4px}
+.ins-foot .btn svg,.df .btn svg{width:15px;height:15px}
+
 </style>
 </head>
 <body>
@@ -312,6 +517,8 @@ details.how{margin-top:10px;font-size:12px;color:var(--ink-2)}details.how summar
   </div>
 </div>
 <div id="layer"></div>
+<div id="tip"></div>
+<nav class="tabbar" id="tabbar" aria-label="Main navigation"></nav>
 <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
 <div id="print-root"></div>
 
@@ -455,21 +662,25 @@ if(S&&S.v===1){try{const s2=seed();
   S.v=2;localStorage.setItem(KEY,JSON.stringify(S))}catch(e){if(!S||S.v!==2)S=null}}
 if(!S||S.v!==2)S=seed();
 let uiSaved={};try{uiSaved=JSON.parse(localStorage.getItem(UKEY)||'{}')||{}}catch(e){}
-const VIEWS=['overview','shopper','directory','avalon','verification','appointments','integrations'];
+const VIEWS=['briefing','shopper','insights','appointments','comparison','tools'];
+const ALIAS={overview:'briefing',directory:'insights',avalon:'comparison',verification:'tools',integrations:'tools'};
+function routeOf(x){x=String(x||'').replace(/^#/,'');if(x==='verification')UI.tools.tab='verification';if(x==='integrations')UI.tools.tab='settings';x=ALIAS[x]||x;return VIEWS.includes(x)?x:'briefing'}
 const UI={
-  route:VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):'overview',
+  route:'briefing',
   role:ROLES[uiSaved.role]?uiSaved.role:'Sales Manager',collapsed:!!uiSaved.collapsed,
   range:30,actComp:'all',
   dir:{q:'',status:'all',archived:false},
   cmp:{base:'e2',comp:'all',type:'all',minConf:'any',hideUnlike:false,showCand:true,sort:'price',sel:[]},
   ver:{tab:'queue',q:''},
   appt:{view:'tomorrow',date:dOff(1),consultant:'all',q:''},
-  ss:{tab:'brief',win:7,showLow:false,open:{},card:'c8',shop:null,q:'',wcComp:'all',wcMin:'1'},
+  ss:{tab:'changing',win:7,showLow:false,open:{},card:'c8',shop:null,q:'',wcComp:'all',wcMin:'1',qf:{comp:'all',cat:'all',conf:'any',fresh:'all'}},
+  tools:{tab:'verification'},open:{},tip:null,how:!uiSaved.howHidden,demoHidden:!!uiSaved.demoHidden,
   stack:[],modal:null,pop:null,gq:''
 };
+UI.route=routeOf(location.hash);
 let _cx=null;
 function save(){_cx=null;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
-function saveUI(){try{localStorage.setItem(UKEY,JSON.stringify({role:UI.role,collapsed:UI.collapsed}))}catch(e){}}
+function saveUI(){try{localStorage.setItem(UKEY,JSON.stringify({role:UI.role,collapsed:UI.collapsed,howHidden:!UI.how,demoHidden:UI.demoHidden}))}catch(e){}}
 const me=()=>Object.assign({role:UI.role},ROLES[UI.role]);
 function audit(action){S.audit.unshift({at:new Date().toISOString(),by:me().name,action});S.audit=S.audit.slice(0,200)}
 
@@ -530,22 +741,22 @@ function freshness(o){
   if(o.verification!=='Verified')return {k:'unverified',label:'Unverified',why:o.verification==='More info required'?'Waiting on more evidence':'Not reviewed yet'};
   if(o.expires&&until(o.expires)<0)return {k:'expired',label:'Expired',why:'Advertised end date passed ('+fmtD(o.expires)+')'};
   if(o.revalidateBy&&until(o.revalidateBy)<0)return {k:'expired',label:'Expired',why:'Revalidation was due '+fmtD(o.revalidateBy)};
-  if(o.markedStale)return {k:'stale',label:'Stale',why:'Marked stale by a reviewer'};
+  if(o.markedStale)return {k:'stale',label:'Outdated',why:'Marked outdated by a reviewer'};
   const a=ago(o.observed);
-  if(a>45)return {k:'stale',label:'Stale',why:'Last observed '+a+' days ago'};
+  if(a>45)return {k:'stale',label:'Outdated',why:'Last observed '+a+' days ago'};
   if(a>21||(o.revalidateBy&&until(o.revalidateBy)<=7))return {k:'review',label:'Needs review',why:o.revalidateBy&&until(o.revalidateBy)<=7?'Revalidation due '+fmtD(o.revalidateBy):'Observed '+a+' days ago'};
   return {k:'current',label:'Current',why:'Observed '+rel(o.observed)+(o.revalidateBy?'; revalidate by '+fmtD(o.revalidateBy):'')};
 }
 const quotable=o=>!!o&&o.verification==='Verified'&&['current','review'].includes(freshness(o).k);
 
 /* ---------- render atoms ---------- */
-const confHTML=o=>{const c=confidence(o),n={High:3,Medium:2,Low:1}[c.level];return `<span class="conf" title="${esc(c.why)}"><i>${[1,2,3].map(i=>`<b class="${i<=n?'on':''}"></b>`).join('')}</i>${c.level}</span>`};
-const freshHTML=o=>{const f=freshness(o);return `<span class="pill f-${f.k}" title="${esc(f.why)}">${f.label}</span>`};
+const confHTML=o=>{const c=confidence(o),n={High:3,Medium:2,Low:1}[c.level],inner=`<i aria-hidden="true">${[1,2,3].map(i=>`<b class="${i<=n?'on':''}"></b>`).join('')}</i>${c.level}`;return o.id?`<button type="button" class="conf" data-a="why" data-k="conf" data-id="${o.id}" aria-label="Confidence ${c.level}. Explain" title="${esc(c.why)}">${inner}</button>`:`<span class="conf" title="${esc(c.why)}">${inner}</span>`};
+const freshHTML=o=>{const f=freshness(o);return `<button type="button" class="pill f-${f.k}" data-a="why" data-k="fresh" data-id="${o.id}" aria-label="Freshness ${f.label}. Explain" title="${esc(f.why)}">${f.label}</button>`};
 const vsHTML=v=>`<span class="pill vs-${esc(String(v).split(' ')[0])}">${esc(v)}</span>`;
 const demoChip=x=>x&&x.demo?' <span class="chip demo" title="Fictional demo record">Demo</span>':'';
 const candChip=c=>c&&c.status==='candidate'?' <span class="chip cand" title="From the proposed shortlist. Builder, community and activity not yet verified.">Candidate</span>':'';
 const NV='<span class="nv">Not verified</span>';
-const FLABEL={current:'Current',review:'Needs review',stale:'Stale',expired:'Expired',conflict:'Conflicting',unverified:'Unverified'};
+const FLABEL={current:'Current',review:'Needs review',stale:'Outdated',expired:'Expired',conflict:'Conflicting',unverified:'Unverified'};
 function evCell(o,label){
   if(!o)return NV;
   const f=freshness(o);
@@ -573,11 +784,11 @@ function attention(){
     if(f.k==='expired')items.push({kind:'Expired',cls:'f-expired',o,text:f.why});
     else if(f.k==='conflict')items.push({kind:'Conflicting',cls:'f-conflict',o,text:f.why});
     else if(f.k==='unverified'&&!OFFICIAL.includes(o.sourceType))items.push({kind:'Unverified report',cls:'f-unverified',o,text:SRC[o.sourceType]+', '+rel(o.observed)});
-    else if(f.k==='stale')items.push({kind:'Stale',cls:'f-stale',o,text:f.why});
+    else if(f.k==='stale')items.push({kind:'Outdated',cls:'f-stale',o,text:f.why});
     if(!o.sourceRef&&o.verification!=='Rejected')items.push({kind:'Missing source',cls:'f-stale',o,text:'No evidence reference attached'});
     if(o.expires&&o.verification==='Verified'&&f.k!=='expired'&&until(o.expires)<=7)items.push({kind:'Promotion ending',cls:'f-review',o,text:'Advertised to end '+fmtD(o.expires)+' ('+rel(o.expires)+')'});
   }
-  const order={Conflicting:0,Expired:1,'Promotion ending':2,'Missing source':3,'Unverified report':4,Stale:5};
+  const order={Conflicting:0,Expired:1,'Promotion ending':2,'Missing source':3,'Unverified report':4,Outdated:5};
   return items.sort((a,b)=>order[a.kind]-order[b.kind]);
 }
 function recs(){
@@ -591,7 +802,7 @@ function recs(){
   for(const it of attention()){
     if(it.kind==='Promotion ending')out.push({p:3,title:'Check whether '+subj(it.o)+' extends its '+it.o.field.toLowerCase()+' offer',why:it.text+'. It drops out of briefings after that date.',ids:[it.o.id],a:'openObs',id:it.o.id,label:'View evidence'});
     if(it.kind==='Expired')out.push({p:4,title:'Revalidate '+it.o.field.toLowerCase()+' for '+subj(it.o),why:it.text,ids:[it.o.id],a:'openObs',id:it.o.id,label:'View evidence'});
-    if(it.kind==='Stale'&&it.o.category==='price')out.push({p:4,title:'Refresh the starting price for '+subj(it.o),why:it.text+'. Excluded from briefings until refreshed.',ids:[it.o.id],a:'openObs',id:it.o.id,label:'View evidence'});
+    if(it.kind==='Outdated'&&it.o.category==='price')out.push({p:4,title:'Refresh the starting price for '+subj(it.o),why:it.text+'. Excluded from briefings until refreshed.',ids:[it.o.id],a:'openObs',id:it.o.id,label:'View evidence'});
   }
   for(const o of S.obs){if(!compArch(o.compId)&&o.verification==='Pending review'&&OFFICIAL.includes(o.sourceType)&&!c.conflict[o.id])out.push({p:3,title:'Verify '+o.field.toLowerCase()+': '+subj(o),why:SRC[o.sourceType]+' observation from '+rel(o.observed)+' is awaiting review',ids:[o.id],a:'openObs',id:o.id,label:'Review evidence'})}
   return out.sort((a,b)=>a.p-b.p).slice(0,6);
@@ -599,21 +810,21 @@ function recs(){
 
 /* ---------- shell ---------- */
 function renderNav(){
-  const n=kpis().needs;
-  const items=[['overview','Overview'],['shopper','Secret Shopper'],['directory','Competitor Directory'],['avalon','Avalon Comparison'],['verification','Verification'],['appointments','Sales Appointments'],['integrations','Settings & Integrations']];
-  document.getElementById('nav').innerHTML=items.map(([k,l])=>`<a href="#${k}" ${UI.route===k?'aria-current="page"':''} title="${l}">${svg(k)}<span class="lbl">${l}</span>${k==='verification'&&n?`<span class="badge">${n}</span>`:''}</a>`).join('');
+  const n=kpis().needs,ss=shopEvents(7).filter(e=>e.score>=4).length;
+  const items=[['briefing','Daily Briefing','Briefing'],['shopper','Secret Shopper','Shopper'],['insights','Competitor Insights','Insights'],['appointments','Appointments','Appts'],['comparison','Community Comparison','Compare']];
+  document.getElementById('nav').innerHTML=items.map(([k,l])=>`<a href="#${k}" class="${k==='shopper'?'sig':''}" ${UI.route===k?'aria-current="page"':''} title="${l}">${svg(k)}<span class="lbl">${l}</span>${k==='shopper'&&ss?`<span class="badge"><span class="sr">Alerts: </span>${ss}</span>`:''}</a>`).join('')+`<div class="nav-sep" role="separator"></div><a href="#tools" ${UI.route==='tools'?'aria-current="page"':''} title="Tools & Settings">${svg('tools')}<span class="lbl">Tools &amp; Settings</span>${n?`<span class="badge"><span class="sr">To verify: </span>${n}</span>`:''}</a>`;
+  document.getElementById('tabbar').innerHTML=items.concat([['tools','Tools & Settings','Tools']]).map(([k,l,s])=>`<a href="#${k}" ${UI.route===k?'aria-current="page"':''} aria-label="${l}">${svg(k)}<span aria-hidden="true">${s}</span>${(k==='shopper'&&ss)||(k==='tools'&&n)?'<span class="tb-dot" aria-hidden="true"></span>':''}</a>`).join('');
   document.getElementById('app').classList.toggle('collapsed',UI.collapsed);
 }
 function renderTop(){
   const att=attention().length;
   document.getElementById('top').innerHTML=`
-  <div class="search"><label class="sr" for="gsearch">Search</label>${svg('search')}<input id="gsearch" type="search" placeholder="Search builders, products, records, appointments" autocomplete="off" value="${esc(UI.gq)}"><div id="sres"></div></div>
+  <div class="search"><label class="sr" for="gsearch">Search</label>${svg('search')}<input id="gsearch" type="search" placeholder="Search builders, homes, insights, buyers" autocomplete="off" value="${esc(UI.gq)}"><div id="sres"></div></div>
   <span class="spacer"></span>
-  <label class="ctl">Region <select class="in" aria-label="Region">${REGIONS.map(r=>`<option ${r==='Ontario'?'selected':'disabled'}>${r}${r==='Ontario'?'':' (not in pilot)'}</option>`).join('')}</select></label>
-  <label class="ctl">Community <select class="in" aria-label="Empire community"><option>Avalon (pilot)</option></select></label>
-  <label class="ctl">Viewing as <select class="in" data-f="role" aria-label="Demo role">${Object.keys(ROLES).map(r=>`<option value="${r}" ${UI.role===r?'selected':''}>${ROLES[r].name}, ${r}</option>`).join('')}</select></label>
+  <span class="ctx" title="Pilot scope">${svg('pin')}Avalon pilot, Ontario</span>
+  <label class="ctl"><span class="sr">Viewing as</span><select class="in" data-f="role" aria-label="Viewing as (demo role)" style="border-radius:999px">${Object.keys(ROLES).map(r=>`<option value="${r}" ${UI.role===r?'selected':''}>${ROLES[r].name}, ${r}</option>`).join('')}</select></label>
   <div style="position:relative"><button class="icon-btn" data-a="bell" aria-label="Alerts, ${att} need attention" aria-expanded="${UI.pop==='bell'}">${svg('bell')}${att?`<span class="dot">${att}</span>`:''}</button>${UI.pop==='bell'?bellPop():''}</div>`;
-  document.getElementById('demo-note').innerHTML='Demo environment. Builders marked <span class="chip demo">Demo</span> are fictional, and their prices, products and incentives are invented, as are all customers and Empire prices. The six <span class="chip cand">Candidate</span> builders are real names from the proposed Avalon shortlist and hold no data until someone verifies it. Changes save in this browser only.';
+  document.getElementById('demo-note').innerHTML=UI.demoHidden?'':`${svg('info')}<span>Demo environment. Builders marked <span class="chip demo">Demo</span> are fictional, as are their prices, products and incentives, every customer, and Empire’s prices. The six <span class="chip cand">Candidate</span> builders are real names with no data until someone verifies it. Changes save in this browser only.</span><button class="btn sm" data-a="demoHide">Got it</button>`;
 }
 function bellPop(){
   const it=attention().slice(0,7);
@@ -633,72 +844,6 @@ function renderSearch(){
 /* ---------- views ---------- */
 const briefPill=a=>a.prepDone?'<span class="pill f-current">Prep complete</span>':a.briefing?'<span class="pill f-review">Briefing ready</span>':'<span class="pill f-unverified">Briefing required</span>';
 const dayLabel=d=>d===TODAY?'Today':d===dOff(1)?'Tomorrow':fmtD(d);
-function vOverview(){
-  const k=kpis(),R=UI.range;
-  const changes=S.obs.filter(o=>!compArch(o.compId)&&isChange(o)&&ago(o.observed)<=R&&ago(o.observed)>=0).sort(byObsDesc);
-  const att=attention(),rc=recs(),ssA=shopEvents(7).filter(e=>e.score>=4).sort(ssSort).slice(0,4);
-  const up=visibleAppts().filter(a=>a.date>=TODAY&&!['Cancelled','Completed'].includes(a.status)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).slice(0,4);
-  const inRange=S.obs.filter(o=>!compArch(o.compId)&&o.verification!=='Rejected'&&ago(o.observed)<=R&&ago(o.observed)>=0&&(UI.actComp==='all'||o.compId===UI.actComp));
-  const byCat={},byB={};inRange.forEach(o=>{byCat[o.category]=(byCat[o.category]||0)+1;const n=compById(o.compId).name;byB[n]=(byB[n]||0)+1});
-  const bars=obj=>{const e=Object.entries(obj).sort((a,b)=>b[1]-a[1]);const m=Math.max(1,...e.map(x=>x[1]));return e.length?`<div class="bars">${e.map(([l,v])=>`<div class="bar-row"><span class="lb" title="${esc(CATS[l]||l)}">${esc(CATS[l]||l)}</span><span class="bar"><span style="width:${v/m*100}%"></span></span><span class="c">${v}</span></div>`).join('')}</div>`:'<div class="faint small">No observations in this range.</div>'};
-  return `
-  <div class="ph"><div><h1>Overview</h1><p>Competitive insights. Better preparation. Smarter decisions.</p></div>
-    <div class="acts"><label class="ctl">Date range <select class="in" data-f="range">${[7,30,90].map(d=>`<option value="${d}" ${R===d?'selected':''}>Last ${d} days</option>`).join('')}</select></label></div></div>
-  <div class="kpis">
-    <div class="kpi"><div class="v">${k.builders}</div><div class="k">Competitors tracked</div><div class="d">Active builders, incl. unverified candidates</div></div>
-    <div class="kpi"><div class="v">${k.comms}</div><div class="k">Communities monitored</div><div class="d">Distinct competitor communities</div></div>
-    <div class="kpi"><div class="v">${k.verified}</div><div class="k">Verified records</div><div class="d">Reviewed and not superseded</div></div>
-    <div class="kpi"><div class="v">${k.changes}</div><div class="k">Changes detected</div><div class="d">Price, incentive, launch or plan changes, 30 days</div></div>
-    <button class="kpi" data-a="go" data-to="appointments"><div class="v">${k.appts}</div><div class="k">Upcoming appointments</div><div class="d">${me().customers==='none'?'Not available for your role':'From today, visible to you'}</div></button>
-    <button class="kpi ${k.needs?'alert':''}" data-a="goVer" data-tab="queue"><div class="v">${k.needs}</div><div class="k">Need verification</div><div class="d">Unverified, conflicting or expired</div></button>
-  </div>
-  <div class="grid2">
-    <div class="col">
-      <section class="panel"><div class="panel-h"><h2>Recent competitive changes <span class="sub">${changes.length} in the last ${R} days</span></h2></div>
-        ${changes.length?changes.map(o=>{const c=compById(o.compId),p=o.prodId?prodById(o.prodId):null;return `<div class="row-item"><div>
-          <div class="ri-t">${esc(c.name)}${demoChip(c)} <span class="muted">${esc(p?p.name:c.community)}</span></div>
-          <div class="chg">${esc(o.field)}: ${o.prev?`<span class="prev">${esc(o.prev)}</span> → `:''}<strong>${esc(o.value)}</strong></div>
-          <div class="ri-meta"><span>${CATS[o.category]}</span><span>Detected ${fmtD(o.observed)}</span><span>${esc(SRC[o.sourceType])}</span>${confHTML(o)}${freshHTML(o)}${o.changeReviewed?'<span class="pill vs-Verified">Reviewed</span>':''}</div></div>
-          <div class="ri-acts"><button class="btn sm" data-a="openObs" data-id="${o.id}">View evidence</button>${o.changeReviewed?'':`<button class="btn sm" data-a="markReviewed" data-id="${o.id}">Mark reviewed</button>`}<button class="btn sm" data-a="assign" data-id="${o.id}">Assign</button><button class="btn sm link" data-a="openComp" data-id="${c.id}">Competitor</button></div></div>`}).join(''):emptyState('No competitive changes recorded in the last '+R+' days.',' <br><button class="btn sm" data-a="newObs">Submit an observation</button>')}
-      </section>
-      <section class="panel"><div class="panel-h"><h2>Recommended actions <span class="sub">Generated from records; each shows its reason</span></h2></div>
-        ${rc.length?rc.map(r=>`<div class="row-item"><div><div class="ri-t">${esc(r.title)}</div><div class="why">${esc(r.why)}</div>${r.ids?`<div class="ri-meta srcref">Evidence: ${r.ids.map(id=>`<button data-a="openObs" data-id="${id}">${id}</button>`).join(' ')}</div>`:''}</div><div class="ri-acts"><button class="btn sm" data-a="${r.a}" data-id="${r.id||''}" data-tab="${r.tab||''}">${r.label}</button></div></div>`).join(''):emptyState('No actions right now. Records are current and verified.')}
-      </section>
-    </div>
-    <div class="col">
-      <section class="panel"><div class="panel-h"><h2>Secret Shopper <span class="sub">Last 7 days</span></h2><button class="btn sm link" data-a="go" data-to="shopper">Morning brief</button></div>
-        ${ssA.length?ssA.map(e=>`<div class="row-item"><div><div>${scoreBadge(e)} <span class="ri-t">${esc(e.title)}</span></div><div class="why">${esc(eventAction(e))}</div></div></div>`).join(''):emptyState('No high-priority competitor changes this week.')}
-      </section>
-      <section class="panel"><div class="panel-h"><h2>Upcoming appointments</h2><button class="btn sm link" data-a="go" data-to="appointments">All appointments</button></div>
-        ${me().customers==='none'?emptyState('Customer appointments aren’t available for the Marketing role.'):up.length?up.map(a=>`<div class="row-item"><div><div class="ri-t">${esc(a.customer)}${demoChip(a)}</div><div class="ri-meta"><span class="num">${dayLabel(a.date)}, ${fmtT(a.time)}</span><span>${esc(a.consultant)}</span><span>${a.prefLot?a.prefLot+'′ ':''}${esc(a.prefType)}, ${money(a.budgetMin)}–${money(a.budgetMax)}</span>${briefPill(a)}</div></div><div class="ri-acts"><button class="btn sm ${a.briefing?'':'pri'}" data-a="openAppt" data-id="${a.id}" data-gen="${a.briefing?'':'1'}">${a.briefing?'View':'Generate briefing'}</button><button class="btn sm link" data-a="cmpFor" data-id="${a.id}">Comparison</button></div></div>`).join(''):emptyState('No upcoming appointments.')}
-      </section>
-      <section class="panel"><div class="panel-h"><h2>Needs attention <span class="sub">${att.length}</span></h2><button class="btn sm link" data-a="goVer" data-tab="queue">Verification</button></div>
-        ${att.slice(0,8).map(x=>`<div class="row-item"><div><div><span class="pill ${x.cls}">${x.kind}</span> <span class="ri-t">${esc(subj(x.o))}</span></div><div class="why">${esc(x.o.field)}: ${esc(x.text)}</div></div><div class="ri-acts"><button class="btn sm" data-a="openObs" data-id="${x.o.id}">Review</button></div></div>`).join('')||emptyState('Nothing needs attention.')}
-        <div class="row-item"><div class="why">Automated collection jobs: none configured. Observations are entered manually until website monitoring is set up.</div></div>
-      </section>
-      <section class="panel"><div class="panel-h"><h2>Competitive activity</h2><select class="in" data-f="actComp" aria-label="Filter activity by competitor"><option value="all">All builders</option>${S.competitors.filter(c=>!c.archived).map(c=>`<option value="${c.id}" ${UI.actComp===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></div>
-        <div class="panel-b"><div class="small muted" style="margin-bottom:8px">Observations by type, last ${R} days, Ontario</div>${bars(byCat)}
-        ${UI.actComp==='all'?`<div class="small muted" style="margin:16px 0 8px">Observations by builder</div>${bars(byB)}`:''}</div>
-      </section>
-    </div>
-  </div>`;
-}
-
-function vDirectory(){
-  const d=UI.dir,q=d.q.trim().toLowerCase();
-  const rows=S.competitors.filter(c=>(d.archived||!c.archived)&&(d.status==='all'||c.status===d.status)&&(!q||(c.name+' '+c.community+' '+c.location).toLowerCase().includes(q))).sort((a,b)=>a.archived-b.archived||a.name.localeCompare(b.name));
-  const canEdit=me().edit;
-  return `<div class="ph"><div><h1>Competitor Directory</h1><p>Builders and communities near Avalon, with the evidence behind every record.</p></div>
-    <div class="acts"><button class="btn" data-a="newObs">Submit observation</button><button class="btn pri" data-a="compForm" ${canEdit?'':'disabled title="Your role can view but not edit competitors"'}>Add competitor</button></div></div>
-  <div class="filters"><input class="in" type="search" data-f="dirq" placeholder="Filter by builder, community or location" value="${esc(d.q)}" aria-label="Filter competitors" style="min-width:260px">
-    <select class="in" data-f="dirStatus" aria-label="Status"><option value="all">All statuses</option><option value="candidate" ${d.status==='candidate'?'selected':''}>Candidates</option><option value="tracked" ${d.status==='tracked'?'selected':''}>Tracked</option></select>
-    <label class="tog"><input type="checkbox" data-f="dirArch" ${d.archived?'checked':''}> Show archived</label><span class="faint small">${rows.length} shown</span></div>
-  <div class="panel"><div class="tw"><table class="t"><thead><tr><th>Builder</th><th>Community</th><th>Location</th><th>Products</th><th class="r">Records</th><th>Last verified</th><th>Data health</th></tr></thead><tbody>
-  ${rows.map(c=>{const os=S.obs.filter(o=>o.compId===c.id&&o.verification!=='Rejected');const lv=os.filter(o=>o.verifiedOn).map(o=>o.verifiedOn).sort().pop();const fk={};os.forEach(o=>{const f=freshness(o).k;fk[f]=(fk[f]||0)+1});
-    return `<tr class="click" data-a="openComp" data-id="${c.id}" tabindex="0"><td><strong>${esc(c.name)}</strong>${demoChip(c)}${candChip(c)}${c.archived?' <span class="chip arch">Archived</span>':''}</td><td>${esc(c.community)}</td><td>${c.location==='Not verified'?NV:esc(c.location)}</td><td>${c.productTypes.length?esc(c.productTypes.join(', ')):NV}</td><td class="r num">${os.length}</td><td class="nw">${lv?fmtD(lv):'<span class="nv">Never</span>'}</td><td>${os.length?Object.keys(FLABEL).filter(k=>fk[k]).map(k=>`<span class="pill f-${k}">${fk[k]} ${FLABEL[k].toLowerCase()}</span>`).join(' '):'<span class="nv">No records</span>'}</td></tr>`}).join('')||`<tr><td colspan="7">${emptyState('No competitors match these filters.')}</td></tr>`}
-  </tbody></table></div></div>`;
-}
-
 function mismatch(base,p){const m=[];if(base.type!==p.type)m.push(p.type+' vs '+base.type);if(Math.abs(base.lot-p.lot)>=5)m.push(p.lot+'′ vs '+base.lot+'′ lot');return m}
 function cmpData(){
   const C=UI.cmp,base=S.empire.find(p=>p.id===C.base)||S.empire[0];
@@ -712,11 +857,9 @@ function cmpData(){
   rows.sort((a,b)=>((!!b.p)-(!!a.p))||sorters[C.sort](a,b));
   return {base,rows,lastV};
 }
-function vAvalon(){
+function cmpTable(){
   const C=UI.cmp,{base,rows,lastV}=cmpData(),sel=C.sel.filter(id=>prodById(id));
-  return `<div class="ph"><div><h1>Avalon — Competitive Landscape</h1><p>Every competitor value links to its source. Unlike products are flagged, not hidden.</p></div>
-    <div class="acts"><button class="btn" data-a="compare" ${sel.length?'':'disabled title="Tick products in the table first"'}>Compare selected (${sel.length})</button><button class="btn" data-a="exportCmp">Export CSV${sel.length?' (selected)':''}</button><button class="btn" data-a="printCmp">Print</button></div></div>
-  <div class="filters">
+  return `<div class="filters">
     <label class="ctl">Compare against <select class="in" data-f="cmpBase">${S.empire.map(p=>`<option value="${p.id}" ${p.id===base.id?'selected':''}>${esc(p.name)}</option>`).join('')}</select></label>
     <select class="in" data-f="cmpComp" aria-label="Competitor"><option value="all">All competitors</option>${S.competitors.filter(c=>!c.archived).map(c=>`<option value="${c.id}" ${C.comp===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select>
     <select class="in" data-f="cmpType" aria-label="Product type"><option value="all">All product types</option>${TYPES.map(t=>`<option ${C.type===t?'selected':''}>${t}</option>`).join('')}</select>
@@ -750,7 +893,7 @@ function actionBtns(o,compact){
   if(v!=='Verified')b.push(`<button class="btn sm" data-a="approve" data-id="${o.id}" ${dis}>Approve</button>`);
   if(v!=='Rejected')b.push(`<button class="btn sm warn" data-a="reject" data-id="${o.id}" ${dis}>Reject</button>`);
   if(v==='Pending review')b.push(`<button class="btn sm" data-a="moreInfo" data-id="${o.id}" ${dis}>Request evidence</button>`);
-  if(v==='Verified'&&!o.markedStale&&!compact)b.push(`<button class="btn sm" data-a="markStale" data-id="${o.id}" ${dis}>Mark stale</button>`);
+  if(v==='Verified'&&!o.markedStale&&!compact)b.push(`<button class="btn sm" data-a="markStale" data-id="${o.id}" ${dis}>Mark outdated</button>`);
   b.push(`<button class="btn sm" data-a="assign" data-id="${o.id}">Assign</button>`);
   return b.join(' ');
 }
@@ -767,7 +910,7 @@ function vVerification(){
     ${rows.map(o=>`<tr><td><button class="btn link" data-a="openObs" data-id="${o.id}">${o.id}</button></td><td>${esc(subj(o))}${demoChip(o)}</td><td><span class="muted">${esc(o.field)}</span><br><strong>${esc(o.value)}</strong></td><td>${esc(SRC[o.sourceType])}${o.sourceRef?'':'<br><span class="flag">No source</span>'}</td><td class="nw">${fmtD(o.observed)}</td><td>${confHTML(o)}</td><td>${freshHTML(o)}</td><td>${vsHTML(o.verification)}</td><td class="nw">${o.assignee?esc(o.assignee):'<span class="faint">Unassigned</span>'}</td><td class="nw">${actionBtns(o,true)}</td></tr>`).join('')||`<tr><td colspan="10">${emptyState(UI.ver.tab==='queue'?'The review queue is empty.':'No records match.')}</td></tr>`}
     </tbody></table></div></div>`;
   }
-  return `<div class="ph"><div><h1>Verification</h1><p>Nothing reaches comparisons or briefings as verified until a reviewer approves it.</p></div><div class="acts"><button class="btn pri" data-a="newObs">Submit observation</button></div></div>
+  return `<div class="ph ph-sub"><div><h2>Verification queue</h2><p>Nothing reaches comparisons or briefings as verified until a reviewer approves it.</p></div><div class="acts"><button class="btn pri" data-a="newObs">Submit observation</button></div></div>
   <div class="tabs" role="tablist" style="margin-bottom:14px">${[['queue','Review queue'],['conflicts','Conflicts'],['fresh','Freshness'],['all','All records']].map(([k,l])=>`<button role="tab" aria-selected="${UI.ver.tab===k}" data-a="verTab" data-tab="${k}">${l}<span class="n">${n[k]}</span></button>`).join('')}</div>
   <div class="filters"><input class="in" type="search" data-f="verq" placeholder="Filter by record, builder, field or value" value="${esc(UI.ver.q)}" aria-label="Filter records" style="min-width:280px">${rv?'':'<span class="faint small">Your role can submit and assign but not approve or reject.</span>'}</div>
   ${body}`;
@@ -785,24 +928,10 @@ function apptFilter(){
     if(q&&!(a.customer+' '+a.consultant+' '+a.leadSource).toLowerCase().includes(q))return false;return true;
   }).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
 }
-function vAppointments(){
-  if(me().customers==='none')return `<div class="ph"><div><h1>Sales Appointments</h1></div></div><div class="panel">${emptyState('Customer records aren’t available for the Marketing role. Switch to a sales role to see appointments.')}</div>`;
-  const A=UI.appt,rows=apptFilter(),cons=[...new Set(visibleAppts().map(a=>a.consultant))];
-  const title={today:'Today’s Appointments',tomorrow:'Tomorrow’s Appointments',week:'Next 7 Days',date:'Appointments on '+fmtD(A.date)}[A.view];
-  return `<div class="ph"><div><h1>${title}</h1><p>${me().customers==='own'?'Your appointments.':'Your team’s appointments.'} Customer details come from a demo CRM and are fictional.</p></div></div>
-  <div class="filters"><div class="seg" role="group" aria-label="Date">${[['today','Today'],['tomorrow','Tomorrow'],['week','Next 7 days']].map(([k,l])=>`<button aria-pressed="${A.view===k}" data-a="apptView" data-v="${k}">${l}</button>`).join('')}</div>
-    <input class="in" type="date" data-f="apptDate" value="${A.view==='date'?A.date:''}" aria-label="Pick a date">
-    ${cons.length>1?`<select class="in" data-f="apptCons" aria-label="Consultant"><option value="all">All consultants</option>${cons.map(c=>`<option ${A.consultant===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:''}
-    <input class="in" type="search" data-f="apptq" placeholder="Search customers" value="${esc(A.q)}" aria-label="Search customers"></div>
-  <div class="panel"><div class="tw"><table class="t"><thead><tr><th>Time</th><th>Customer</th><th>Consultant</th><th>Interest</th><th>Budget</th><th>Lead source</th><th>Status</th><th>Briefing</th><th>Prep</th><th></th></tr></thead><tbody>
-  ${rows.map(a=>{const ck=checklist(a),done=ck.filter(x=>x.done).length;return `<tr class="click" data-a="openAppt" data-id="${a.id}" tabindex="0"><td class="nw num">${A.view==='today'||A.view==='tomorrow'?'':fmtD(a.date)+', '}${fmtT(a.time)}</td><td><strong>${esc(a.customer)}</strong>${demoChip(a)}</td><td>${esc(a.consultant)}</td><td>${a.prefLot?a.prefLot+'′ ':''}${esc(a.prefType)}, ${a.beds} bd</td><td class="nw num">${money(a.budgetMin)}–${money(a.budgetMax)}</td><td>${esc(a.leadSource)}</td><td>${esc(a.status)}</td><td>${briefPill(a)}</td><td class="num">${done}/${ck.length}</td><td><button class="btn sm ${a.briefing?'':'pri'}" data-a="openAppt" data-id="${a.id}" data-gen="${a.briefing?'':'1'}">${a.briefing?'Open':'Generate briefing'}</button></td></tr>`}).join('')||`<tr><td colspan="10">${emptyState('No appointments for this selection.')}</td></tr>`}
-  </tbody></table></div></div>`;
-}
-
 function vIntegrations(){
   const demoCount=S.obs.filter(o=>o.demo).length+S.products.filter(p=>p.demo).length+S.competitors.filter(c=>c.demo).length+S.appts.filter(a=>a.demo).length+(S.prospects||[]).filter(p=>p.demo).length;
   const row=(nm,st,what,need)=>`<div class="integ"><div class="nm">${nm}</div><div><span class="pill st-${st.split(' ')[0]}">${st}</span></div><div><div>${what}</div><div class="faint small" style="margin-top:3px">${need}</div></div></div>`;
-  return `<div class="ph"><div><h1>Settings &amp; Integrations</h1><p>Each status reflects what is actually connected in this prototype.</p></div></div>
+  return `<div class="ph ph-sub"><div><h2>Integrations and data</h2><p>Each status reflects what is actually connected in this prototype.</p></div></div>
   <div class="col">
   <section class="panel"><div class="panel-h"><h2>Integrations</h2></div>
     ${row('Salesforce CRM','Setup required','Appointments and customer profiles here are demo records, not synced from Salesforce.','Needs a connected app, OAuth credentials held server-side, and field mapping for leads, appointments, preferences and outcomes.')}
@@ -814,7 +943,7 @@ function vIntegrations(){
   </section>
   <section class="panel"><div class="panel-h"><h2>Demo data</h2></div><div class="panel-b">
     <p style="margin-top:0">${demoCount} records are marked as demo. Removing them keeps the six candidate builders and anything you added.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-a="removeDemo" ${me().role==='Administrator'?'':'disabled title="Administrators only"'}>Remove demo records</button><button class="btn warn" data-a="resetDemo">Reset to original demo</button></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-a="removeDemo" ${me().role==='Administrator'?'':'disabled title="Administrators only"'}>Remove demo records</button><button class="btn warn" data-a="resetDemo">Reset to original demo</button>${UI.demoHidden?'<button class="btn link" data-a="demoShow">Show the demo notice again</button>':''}</div>
     <p class="faint small">Switching roles in the top bar is a demo control. In production, permissions are enforced on the server and in the database, not by hiding buttons.</p>
   </div></section>
   <section class="panel"><div class="panel-h"><h2>Activity log</h2><span class="sub">Last 15 actions</span></div>
@@ -1023,20 +1152,15 @@ function shopMD(cid){
   const L=a=>a.length?a.map(x=>'- '+(x.t||x)+(x.ids&&x.ids.length?' ['+x.ids.join(', ')+']':'')).join('\n'):'- None verified';
   return `# Secret shop: ${c.name}, ${c.community}\n\nBuilt ${fmtD(TODAY)} from recorded observations.${c.demo?' DEMO DATA: this builder and its records are fictional.':''}\n\n## Products\n${ps.map(p=>{const pr=best(p.id,'Starting price');return '- '+p.name+' ('+p.type+', '+p.lot+'′, '+p.sqft+' sq ft): '+(pr?pr.value+' ['+pr.id+', '+freshness(pr).label+']':'Not verified')}).join('\n')||'- None on file'}\n\n## Changes in the last 90 days\n${evs.map(e=>'- '+fmtD(e.o.observed)+': '+e.title+' (score '+e.score+', '+confidence(e.o).level+' confidence) ['+e.o.id+']').join('\n')||'- None'}\n\n## Why a buyer might choose them\n${L(b.attract)}\n\n## Where Empire is stronger\n${L(b.us)}\n\n## Talking points (recommendations, review before use)\n${L(b.talk)}\n\n## Likely objections\n${b.obj.map(q=>'- '+q.q+'\n  '+q.a).join('\n')||'- None'}\n`;
 }
-function vShopper(){
-  const T=UI.ss.tab,tabs=[['brief','Morning brief'],['changes','What changed'],['cards','Battlecards'],['shop','Shop a competitor']];
-  const body=T==='brief'?ssBrief():T==='changes'?ssChanges():T==='cards'?ssCards():ssShop();
-  return `<div class="ph"><div><h1>Secret Shopper</h1><p>What changed in your market, who it matters to, and what to do about it today.</p></div><div class="acts"><button class="btn" data-a="newObs">Log a competitor observation</button></div></div>
-  <div class="tabs" role="tablist" style="margin-bottom:16px">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${T===k}" data-a="ssTab" data-tab="${k}">${l}</button>`).join('')}</div>${body}`;
-}
 function ssBrief(){
-  const W=UI.ss.win,evs=shopEvents(W),alerts=evs.filter(e=>e.score>=4).sort(ssSort),mid=evs.filter(e=>e.score===3).sort(ssSort),low=evs.filter(e=>e.score<=2).sort(ssSort),builders=new Set(evs.map(e=>e.o.compId)).size;
+  const W=UI.ss.win,evs=shopEvents(W).filter(e=>obsPass(e.o)),alerts=evs.filter(e=>e.score>=4).sort(ssSort),mid=evs.filter(e=>e.score===3).sort(ssSort),low=evs.filter(e=>e.score<=2).sort(ssSort),builders=new Set(evs.map(e=>e.o.compId)).size;
   return `<div class="filters"><label class="ctl">Window <select class="in" data-f="ssWin">${[[1,'Since yesterday'],[7,'Last 7 days'],[30,'Last 30 days']].map(([d,l])=>`<option value="${d}" ${W===d?'selected':''}>${l}</option>`).join('')}</select></label><span class="muted small">${evs.length} competitor change${evs.length===1?'':'s'} reviewed across ${builders} builder${builders===1?'':'s'}. ${alerts.length} need${alerts.length===1?'s':''} attention.</span></div>
   ${alerts.length?alerts.map(ssCardHTML).join(''):`<div class="panel" style="margin-bottom:12px">${emptyState('No high-priority competitor changes in this window.')}</div>`}
   ${mid.length?`<section class="panel"><div class="panel-h"><h2>Worth knowing <span class="sub">${mid.length}</span></h2></div>${mid.map(ssRowHTML).join('')}</section>`:''}
   <p class="muted small" style="margin:14px 0 6px">${low.length} other observation${low.length===1?'':'s'} reviewed. No action needed.${low.length?` <button class="btn sm link" data-a="ssLow">${UI.ss.showLow?'Hide':'Show'}</button>`:''}</p>
   ${UI.ss.showLow&&low.length?`<section class="panel">${low.map(ssRowHTML).join('')}</section>`:''}
-  <p class="faint small" style="margin-top:16px;max-width:820px">How scoring works: threat equals change significance × overlap with an Avalon product × prospect exposure × immediacy, rounded to 1–5. Confidence is assessed separately, and anything unverified or conflicting is flagged instead of becoming a talking point. Scores of 4–5 are alerts, 3 goes under Worth knowing, and 1–2 stay searchable in What changed.</p>`;
+  <p class="faint small" style="margin-top:16px;max-width:820px">How scoring works: threat equals change significance × overlap with an Avalon product × prospect exposure × immediacy, rounded to 1–5. Confidence is assessed separately, and anything unverified or conflicting is flagged instead of becoming a talking point. Scores of 4–5 are alerts, 3 goes under Worth knowing, and 1–2 stay in the full timeline below.</p>
+  <details class="more" data-k="ssTimeline" ${UI.open.ssTimeline?'open':''}><summary>${svg('chev')}Full timeline, last 90 days</summary><div class="inner" style="padding:16px 20px">${ssChanges()}</div></details>`;
 }
 function ssChanges(){
   const W=UI.ss,cs=S.competitors.filter(c=>!c.archived);
@@ -1057,6 +1181,291 @@ function ssShop(){
   if(!c||c.archived)return head+`<div class="panel">${emptyState('Pick a builder to get a shop report built from the records on file: pricing, quick move-ins, offers, recent changes, how it compares with Avalon, and which prospects it affects.')}</div>`;
   return head+shopHTML(c.id);
 }
+
+/* ---------- redesign: shared helpers ---------- */
+Object.assign(ICON,{
+  briefing:'<path d="M12 2v5M4.9 9.9l1.4 1.4M2 17h2M20 17h2M17.7 11.3l1.4-1.4M22 21H2M16 17a4 4 0 0 0-8 0"/>',
+  insights:ICON.directory,
+  comparison:'<path d="M12 3v18M7 21h10M4 7h16M7 7l-3 6a3 3 0 0 0 6 0zM17 7l-3 6a3 3 0 0 0 6 0z"/>',
+  tools:'<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
+  tag:'<path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+  gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+  wallet:'<path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  flag:'<path d="M4 22V4M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1"/>',
+  layout:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  home:'<path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  alert:'<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>',
+  bulb:'<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>',
+  users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  file:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+  chev:'<path d="m9 18 6-6-6-6"/>',
+  pin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'
+});
+const CAT_ICON={price:'tag',incentive:'gift',deposit:'wallet',occupancy:'clock',launch:'flag',floorplan:'layout',inventory:'home'};
+const CONF_DESC={High:'Supported by an official source that a reviewer has checked',Medium:'Supported by an official source awaiting review, several consistent reports, or a checked third-party listing',Low:'Based on a single report, an uncorroborated listing, or no source at all'};
+const FRESH_DESC={current:'Recently observed and within its revalidation date.',review:'Still usable, but due for a fresh check soon.',stale:'Observed a while ago. It may still be true, so check it before quoting.',expired:'Past its advertised end date or revalidation date.',conflict:'Another report disagrees. Resolve it before anyone quotes either value.',unverified:'Not reviewed yet. It may be accurate, but no one has confirmed it.',superseded:'Replaced by a newer verified observation.',rejected:'A reviewer rejected this record.'};
+const CQ={price:'“Is it cheaper over there?”',incentive:'“What are you offering compared with them?”',deposit:'“How much do I need up front?”',occupancy:'“When could I move in?”',inventory:'“What could I move into soon?”',launch:'“Is anything new opening nearby?”',floorplan:'“Do you have a plan like theirs?”'};
+const TALK={price:'Compare the complete purchase: home, lot, included features and timing, not just the headline price.',incentive:'Ask what the offer covers and compare it with what’s already included at Avalon.',deposit:'Lay out both deposit schedules side by side, with dates.',occupancy:'Compare realistic move-in dates, and confirm Avalon availability before promising one.',inventory:'Compare realistic move-in dates, and confirm Avalon availability before promising one.',launch:'Ask which release they liked, then compare like for like.',floorplan:'Ask which plan they liked, then compare like for like.'};
+const plural=(n,w,ws)=>n+' '+(n===1?w:(ws||w+'s'));
+function prepCount(a){const s=a.prepSteps||{};return [1,2,3,4,5].filter(i=>s[i]).length}
+function prepProgress(a){return a.prepDone?1:(a.briefing?prepCount(a)/5:0)}
+function prepLabel(a){return a.prepDone?'Prepared':!a.briefing?'Not started':prepCount(a)+' of 5 steps reviewed'}
+const ringHTML=p=>{const C=2*Math.PI*50,off=C*(1-p);return `<div class="ring" role="img" aria-label="Preparation ${Math.round(p*100)} percent complete"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"/></svg><div class="rv">${Math.round(p*100)}%</div></div>`};
+const pbar=p=>`<div class="pbar" role="progressbar" aria-label="Preparation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(p*100)}"><span style="width:${Math.round(p*100)}%"></span></div>`;
+function openTasks(){const out=[];visibleAppts().forEach(a=>(a.tasks||[]).forEach((t,i)=>{if(!t.done)out.push({t,i,owner:a.customer,src:'appt',id:a.id})}));(S.prospects||[]).filter(canSee).forEach(p=>(p.tasks||[]).forEach((t,i)=>{if(!t.done)out.push({t,i,owner:p.name,src:'prospect',id:p.id})}));return out.sort((a,b)=>a.t.due.localeCompare(b.t.due))}
+function liveObs(){const c=cx();return S.obs.filter(o=>!compArch(o.compId)&&o.verification!=='Rejected'&&!c.superseded.has(o.id))}
+function obsPass(o){const q=UI.ss.qf;if(q.comp!=='all'&&o.compId!==q.comp)return false;if(q.cat!=='all'&&o.category!==q.cat)return false;if(q.conf!=='any'){const l=confidence(o).level;if(q.conf==='High'&&l!=='High')return false;if(q.conf==='Medium'&&l==='Low')return false}if(q.fresh!=='all'&&freshness(o).k!==q.fresh)return false;return true}
+function headOf(e){const o=e.o,c=compById(o.compId),p=o.prodId?prodById(o.prodId):null,pn=p?p.name:c.community;switch(e.type){case 'priceDown':return 'Price cut on '+pn;case 'priceUp':return 'Price increase on '+pn;case 'incentive':return o.field==='Mortgage promotion'?'New financing offer on '+pn:'New '+o.field.toLowerCase()+' on '+pn;case 'qmiAdd':return 'New quick move-in at '+c.community;case 'qmiGone':return 'A competing quick move-in is gone';case 'occupancy':return pn+' occupancy moved '+(e.kind==='opportunity'?'later':'earlier');case 'expiring':return poss(c.name.split(' ')[0])+' '+o.field.toLowerCase()+' offer ends soon';case 'launch':return 'Release news at '+c.community;case 'floorplan':return 'Floorplan update at '+c.community;default:return o.field}}
+function obsHead(o){const c=compById(o.compId),p=o.prodId?prodById(o.prodId):null,pn=p?p.name:c.community;switch(o.category){case 'price':return o.field==='Advertised from price'?'Headline price: '+o.value:pn+' from '+o.value;case 'incentive':return o.field==='Mortgage promotion'?'Financing offer on '+pn:o.value+' on '+pn;case 'deposit':return 'Deposit schedule on '+pn;case 'occupancy':return pn+' advertised for '+o.value;default:return o.value}}
+function salesRel(o){const type=o.category==='inventory'?(o.field==='Quick move-in removed'?'qmiGone':'qmiAdd'):o.category==='occupancy'?'occupancy':'other';const m=matchProspects({o,type}).length;return (CQ[o.category]?'Helps answer '+CQ[o.category]+'.':'')+(m?' '+plural(m,'prospect')+' here match this product and budget.':'')}
+function useHelpHTML(o){
+  const c=compById(o.compId),p=o.prodId?prodById(o.prodId):null,pn=p?p.name:c.community,f=freshness(o),cf=confidence(o),e=p?closestEmp(p):null;
+  const means={price:o.field==='Advertised from price'?'This is the headline price '+c.name+' advertises. Headline prices don’t always match a home you can actually buy.':'This is the advertised starting price for '+pn+'. Starting prices usually exclude lot premiums and options.',incentive:'This is a promotion '+c.name+' has advertised'+(o.expires?', ending '+fmtD(o.expires):'')+'. Eligibility and terms usually apply.',deposit:'This is the deposit schedule reported for '+pn+'.',occupancy:'This is the move-in timing advertised for '+pn+'. Builders revise these often.',inventory:'This is a change in the quick move-in homes buyers can purchase now.',launch:'This is news about a new release or phase.',floorplan:'This is a change to the floorplans '+c.name+' offers.'}[o.category]||'';
+  const conf=o.verification==='Verified'?'Yes. '+SRC[o.sourceType]+', reviewed by '+(o.reviewer||'a reviewer')+' on '+fmtD(o.verifiedOn)+'.':'Not yet. '+cf.why+'.';
+  const unc=f.k==='current'?'Whether anything has changed since '+fmtD(o.observed)+'.':f.why+'.';
+  const ver='Check the source date and terms before you quote it'+(f.k==='conflict'?', and resolve the conflicting report first':'')+'.';
+  const emp=e?e.name+' is the closest Avalon home: '+money(e.price)+', '+lc1(e.incentive)+' (demo data).':'There’s no like-for-like Avalon home to compare it with.';
+  return `<details class="use"><summary>${svg('bulb')}How can I use this?</summary><dl><dt>What it means</dt><dd>${esc(means)}</dd><dt>Confirmed?</dt><dd>${esc(conf)}</dd><dt>Still uncertain</dt><dd>${esc(unc)}</dd><dt>Buyer question it answers</dt><dd>${esc(CQ[o.category]||'—')}</dd><dt>Verify before relying on it</dt><dd>${esc(ver)}</dd><dt>Relevance to Empire</dt><dd>${esc(emp)}</dd><dt>Suggested approach <span class="tag rec">Suggestion</span></dt><dd>${esc(TALK[o.category]||'Mention it only if it comes up.')}</dd></dl></details>`;
+}
+function obsCardHTML(o,opt){
+  opt=opt||{};const c=compById(o.compId),cf=confidence(o);
+  return `<article class="ins"><div class="ins-top"><span class="cat">${svg(CAT_ICON[o.category]||'info')}${esc(CATS[o.category]||'Update')}</span>${opt.reason&&!['Conflicting','Expired','Outdated'].includes(opt.reason.kind)?`<span class="pill ${opt.reason.cls}">${esc(opt.reason.kind)}</span>`:''}<span class="grow"></span>${freshHTML(o)}</div>
+  <div class="co-line">${esc(c.name)}${demoChip(c)}, ${esc(c.community)}</div>
+  <h3><button data-a="openObs" data-id="${o.id}">${esc(obsHead(o))}</button></h3>
+  <dl class="facts2"><dt>Reported detail</dt><dd>${esc(o.value)}${o.prev?` <span class="faint">(was ${esc(o.prev)})</span>`:''}</dd><dt>Source</dt><dd>${esc(SRC[o.sourceType])} <span class="faint small">${esc(TIER_LABEL[TIER[o.sourceType]]||'')}</span></dd><dt>Last checked</dt><dd>Observed ${fmtD(o.observed)}; ${o.verifiedOn?'verified '+fmtD(o.verifiedOn):'not verified yet'}</dd><dt>Confidence</dt><dd>${confHTML(o)} <span class="faint small">${esc(cf.why)}</span></dd><dt>Status</dt><dd>${vsHTML(o.verification)}${opt.reason?' <span class="faint small">'+esc(opt.reason.text)+'</span>':''}</dd><dt>Sales relevance</dt><dd>${esc(salesRel(o))}</dd></dl>
+  ${useHelpHTML(o)}
+  <div class="ins-foot"><button class="btn sm" data-a="openObs" data-id="${o.id}">${svg('file')}View evidence</button><button class="btn sm" data-a="cmpObs" data-id="${o.id}">Compare with Empire</button>${opt.actions?actionBtns(o,true):''}</div></article>`;
+}
+function insCardHTML(e,feature){
+  const o=e.o,c=compById(o.compId);
+  return `<article class="ins ${feature?'feature':''}"><div class="ins-top"><span class="cat">${svg(CAT_ICON[o.category]||'info')}${esc(CATS[o.category]||'Update')}</span>${scoreBadge(e)}${demoChip(c)}<span class="grow"></span>${freshHTML(o)}</div>
+  <h3><button data-a="ins" data-id="${e.id}">${esc(headOf(e))}</button></h3>
+  <p class="lede">${esc(e.title)}.</p>
+  ${e.conflict?'<div class="ss-banner" style="margin:0">Conflicting reports. Verify before discussing it with a buyer.</div>':!e.usable?'<div class="ss-banner" style="margin:0">Not verified yet. Treat it as a lead, not a fact.</div>':''}
+  <div class="blk"><b>Why it matters</b>${esc(e.ov.label)}. ${esc(exposureText(e))}</div>
+  <div class="blk"><b>Recommended action</b>${esc(eventAction(e))}</div>
+  ${feature&&e.usable?`<div class="blk"><b>Suggested talking point</b>${esc(eventTalk(e))}</div>`:''}
+  <div class="ins-foot"><span class="src">${esc(SRC[o.sourceType])}, observed ${fmtD(o.observed)}${o.verifiedOn?', verified '+fmtD(o.verifiedOn):''}</span>${confHTML(o)}<button class="btn sm" data-a="ins" data-id="${e.id}">Review insight</button></div></article>`;
+}
+function historyHTML(o){const k=o.prodId||o.compId,g=S.obs.filter(x=>(x.prodId||x.compId)===k&&x.field===o.field).sort((a,b)=>a.observed.localeCompare(b.observed)),first=g[0];return `<ul class="timeline">${first&&first.prev?`<li><div class="when">Before ${fmtD(first.observed)}</div>${esc(first.prev)}</li>`:''}${g.map(x=>`<li class="${x.verification==='Rejected'?'rej':''}"><div class="when">${fmtD(x.observed)}, ${x.id}</div><strong>${esc(x.value)}</strong> ${freshHTML(x)} <span class="faint small">${esc(SRC[x.sourceType])}</span></li>`).join('')}</ul>`}
+
+/* ---------- Daily Briefing ---------- */
+function nextApptHTML(a){
+  const p=prepProgress(a);
+  return `<section class="nextappt" aria-label="Next appointment"><div>
+  <div class="eyebrow">${svg('appointments')}${dayLabel(a.date)}, ${fmtT(a.time)}${a.consultant!==me().name?', with '+esc(a.consultant):''}</div>
+  <h2>${esc(a.customer)}${demoChip(a)}</h2>
+  <div class="when">${esc(a.community)}, ${esc(a.leadSource.toLowerCase())} lead, ${a.prevVisits?plural(a.prevVisits,'previous visit'):'first visit'}</div>
+  <div class="facts"><span class="fact">${money(a.budgetMin)}–${money(a.budgetMax)}</span><span class="fact">${a.prefLot?a.prefLot+'′ ':''}${esc(a.prefType)}, ${a.beds} bd</span><span class="fact">${esc(a.timeline)}</span>${a.objections.length?`<span class="fact">${plural(a.objections.length,'concern')} noted</span>`:''}</div>
+  <p class="brief-s">${a.briefing?esc(a.briefing.B.summary):'No briefing yet. It pulls only from verified records and takes about a minute to read.'}</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn pri lg" data-a="prep" data-id="${a.id}">${a.prepDone?'Review preparation':a.briefing?'Continue preparing':'Prepare for appointment'}</button><button class="btn lg" data-a="openAppt" data-id="${a.id}">Appointment details</button></div>
+  </div><div class="na-prog">${ringHTML(p)}<div class="small muted">${prepLabel(a)}</div></div></section>`;
+}
+function feedHTML(){
+  const R=UI.range,changes=S.obs.filter(o=>!compArch(o.compId)&&isChange(o)&&ago(o.observed)<=R&&ago(o.observed)>=0).sort(byObsDesc);
+  const inRange=S.obs.filter(o=>!compArch(o.compId)&&o.verification!=='Rejected'&&ago(o.observed)<=R&&ago(o.observed)>=0&&(UI.actComp==='all'||o.compId===UI.actComp));
+  const byCat={},byB={};inRange.forEach(o=>{byCat[o.category]=(byCat[o.category]||0)+1;const n=compById(o.compId).name;byB[n]=(byB[n]||0)+1});
+  const bars=obj=>{const e=Object.entries(obj).sort((a,b)=>b[1]-a[1]),m=Math.max(1,...e.map(x=>x[1]));return e.length?`<div class="bars">${e.map(([l,v])=>`<div class="bar-row"><span class="lb" title="${esc(CATS[l]||l)}">${esc(CATS[l]||l)}</span><span class="bar"><span style="width:${v/m*100}%"></span></span><span class="c">${v}</span></div>`).join('')}</div>`:'<div class="faint small">No observations in this range.</div>'};
+  return `<div class="panel-b" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><label class="ctl">Date range <select class="in" data-f="range">${[7,30,90].map(d=>`<option value="${d}" ${R===d?'selected':''}>Last ${d} days</option>`).join('')}</select></label><select class="in" data-f="actComp" aria-label="Filter activity by competitor"><option value="all">All builders</option>${S.competitors.filter(c=>!c.archived).map(c=>`<option value="${c.id}" ${UI.actComp===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></div>
+  <div class="grid2" style="padding:0 20px 20px"><section class="panel"><div class="panel-h"><h2>Recent competitive changes <span class="sub">${changes.length}</span></h2></div>
+  ${changes.length?changes.map(o=>{const c=compById(o.compId),p=o.prodId?prodById(o.prodId):null;return `<div class="row-item"><div><div class="ri-t">${esc(c.name)}${demoChip(c)} <span class="muted" style="font-weight:400">${esc(p?p.name:c.community)}</span></div><div class="chg">${esc(o.field)}: ${o.prev?`<span class="prev">${esc(o.prev)}</span> → `:''}<strong>${esc(o.value)}</strong></div><div class="ri-meta"><span>${fmtD(o.observed)}</span><span>${esc(SRC[o.sourceType])}</span>${confHTML(o)}${freshHTML(o)}${o.changeReviewed?'<span class="pill vs-Verified">Reviewed</span>':''}</div></div><div class="ri-acts"><button class="btn sm" data-a="openObs" data-id="${o.id}">Evidence</button>${o.changeReviewed?'':`<button class="btn sm" data-a="markReviewed" data-id="${o.id}">Mark reviewed</button>`}<button class="btn sm" data-a="assign" data-id="${o.id}">Assign</button></div></div>`}).join(''):emptyState('No competitive changes in this range.')}
+  </section><section class="panel"><div class="panel-h"><h2>Activity by type</h2></div><div class="panel-b">${bars(byCat)}${UI.actComp==='all'?`<div class="small muted" style="margin:18px 0 10px">By builder</div>${bars(byB)}`:''}</div></section></div>`;
+}
+function vBriefing(){
+  const r=me(),hr=new Date().getHours(),first=r.name==='Admin'?'':', '+r.name.split(' ')[0];
+  const greet=(hr<12?'Good morning':hr<17?'Good afternoon':'Good evening')+first+'.';
+  const sub=r.customers==='none'?'Here’s what’s changed in your market today.':r.customers==='team'?'Here’s what your team needs to know before meeting buyers today.':'Here’s what you need to know before you meet your buyers today.';
+  const nowD=new Date(),nowHM=pad(nowD.getHours())+':'+pad(nowD.getMinutes()),vis=visibleAppts().filter(a=>!['Cancelled','Completed'].includes(a.status)&&(a.date>TODAY||(a.date===TODAY&&a.time>=nowHM))),today=vis.filter(a=>a.date===TODAY),tom=vis.filter(a=>a.date===dOff(1)),soon=today.concat(tom),needPrep=soon.filter(a=>!a.prepDone);
+  const evs7=shopEvents(7),alerts=evs7.filter(e=>e.score>=4),toVerify=evs7.filter(e=>!e.usable),tasks=openTasks(),rc=recs(),k=kpis();
+  const upcoming=vis.filter(a=>a.date>=TODAY).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)),next=upcoming[0];
+  const sum=[];if(r.customers!=='none'){sum.push(today.length?plural(today.length,'appointment')+' still to come today':'No more appointments today');if(tom.length)sum.push(tom.length+' tomorrow')}sum.push(plural(evs7.length,'competitor change')+' recorded this week');
+  const tile=(ic,lab,big,unit,txt,btn,hot)=>`<div class="tile ${hot?'hot':''}"><div class="ic">${svg(ic)}</div><div class="lab">${lab}</div><div class="big">${big}<small>${unit}</small></div><div class="txt">${txt}</div>${btn}</div>`;
+  const t1=r.customers==='none'?tile('appointments','Your appointments','—','','Customer appointments aren’t part of the Marketing role.','',false):tile('appointments','Your appointments',soon.length,'today or tomorrow',soon.length?(needPrep.length?`${plural(needPrep.length,'appointment')} ${needPrep.length===1?'needs':'need'} preparation.`:'Everything is prepared.'):'Nothing booked for today or tomorrow.',`<button class="btn sm" data-a="go" data-to="appointments">See appointments</button>`,needPrep.length>0);
+  const t2=tile('shopper','Competitor activity',alerts.length,alerts.length===1?'important change':'important changes',`${plural(evs7.length,'change')} recorded this week${toVerify.length?`, ${toVerify.length} still ${toVerify.length===1?'needs':'need'} verification`:''}.`,`<button class="btn sm" data-a="go" data-to="shopper">Open Secret Shopper</button>`,alerts.length>0);
+  const t3=tile('check','Your next actions',rc.length+tasks.length,'waiting',rc.length?esc(rc[0].title)+'.':tasks.length?'Follow up with '+esc(tasks[0].owner)+'.':'You’re all caught up.',`<button class="btn sm" data-a="scrollTo" data-id="next-actions">Review actions</button>`,false);
+  const brief=evs7.filter(e=>e.score>=3).sort(ssSort).slice(0,4);
+  const tracked=S.competitors.filter(c=>!c.archived&&c.status==='tracked'),byB={};evs7.forEach(e=>byB[e.o.compId]=(byB[e.o.compId]||0)+1);
+  const topId=Object.keys(byB).sort((a,b)=>byB[b]-byB[a])[0],top=topId&&compById(topId);
+  return `<header class="hero"><div class="date">${new Date().toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}</div><h1>${esc(greet)}</h1><p>${sub}</p><p class="sum">${esc(sum.join(', '))}.</p></header>
+  <h2 class="sr">Today’s priorities</h2><div class="tiles">${t1}${t2}${t3}</div>
+  <div class="sec-h"><div><h2>Your Daily Intelligence Brief</h2><p>The competitor changes most likely to come up in today’s conversations.</p></div><button class="btn sm link" data-a="go" data-to="shopper">All insights</button></div>
+  ${brief.length?`<div class="ins-grid">${brief.map((e,i)=>insCardHTML(e,i===0)).join('')}</div>`:`<div class="panel">${emptyState('A quiet week. No competitor changes were recorded in the last 7 days.',' <br><button class="btn sm" data-a="newObs">Submit an observation</button>')}</div>`}
+  ${r.customers==='none'?'':`<div class="sec-h"><div><h2>Prepare for your next appointment</h2></div></div>${next?nextApptHTML(next):`<div class="panel">${emptyState('No upcoming appointments.')}</div>`}`}
+  <section class="band" aria-label="Secret Shopper"><div><div class="eyebrow">${svg('shopper')}Secret Shopper</div><h2>Know what buyers are hearing elsewhere.</h2><p>${plural(tracked.length,'builder')} near Avalon have verified data${top?`. Most active this week: ${esc(top.name)}, with ${plural(byB[topId],'change')}`:''}.</p></div><div class="acts"><button class="btn light" data-a="go" data-to="shopper">Open Secret Shopper</button>${tracked.slice(0,3).map(c=>`<button class="btn ghost-l sm" data-a="ssShopId" data-id="${c.id}">Shop ${esc(c.name.split(' ')[0])}</button>`).join('')}</div></section>
+  <div class="sec-h"><div><h2>Coming up and to do</h2></div></div>
+  <div class="grid2"><section class="panel"><div class="panel-h"><h2>Upcoming appointments</h2><button class="btn sm link" data-a="go" data-to="appointments">All appointments</button></div>
+   ${r.customers==='none'?emptyState('Customer appointments aren’t part of the Marketing role.'):upcoming.slice(0,5).map(a=>`<div class="row-item"><div><div class="ri-t">${esc(a.customer)}${demoChip(a)}</div><div class="ri-meta"><span>${dayLabel(a.date)}, ${fmtT(a.time)}</span><span>${a.prefLot?a.prefLot+'′ ':''}${esc(a.prefType)}</span><span>${esc(a.consultant)}</span></div><div style="margin-top:10px;max-width:280px">${pbar(prepProgress(a))}<div class="small muted" style="margin-top:4px">${prepLabel(a)}</div></div></div><div class="ri-acts"><button class="btn sm ${a.prepDone?'':'pri'}" data-a="prep" data-id="${a.id}">${a.prepDone?'Review':'Prepare'}</button></div></div>`).join('')||emptyState('No upcoming appointments.')}
+  </section><section class="panel" id="next-actions" tabindex="-1"><div class="panel-h"><h2>Your next actions</h2><span class="sub">${rc.length+tasks.length}</span></div>
+   ${rc.map(x=>`<div class="row-item"><div><div class="ri-t">${esc(x.title)}</div><div class="why">${esc(x.why)}</div>${x.ids?`<div class="ri-meta srcref">Evidence: ${x.ids.map(id=>`<button data-a="openObs" data-id="${id}">${id}</button>`).join(' ')}</div>`:''}</div><div class="ri-acts"><button class="btn sm" data-a="${x.a}" data-id="${x.id||''}" data-tab="${x.tab||''}">${x.label}</button></div></div>`).join('')}
+   ${tasks.length?`<div class="row-item"><div><div class="ri-t">Follow-up tasks</div>${tasks.map(t=>`<label class="check"><input type="checkbox" data-a="task2" data-src="${t.src}" data-id="${t.id}" data-i="${t.i}"> <span>${esc(t.t.text)} <span class="faint small">${esc(t.owner)}, due ${fmtD(t.t.due)}</span></span></label>`).join('')}</div></div>`:''}
+   ${!rc.length&&!tasks.length?emptyState('You’re all caught up.'):''}
+  </section></div>
+  <div class="sec-h"><div><h2>At a glance</h2><p>Supporting numbers, each calculated from the records in this prototype.</p></div></div>
+  <div class="kstrip">${[[k.builders,'Competitors tracked'],[k.comms,'Communities monitored'],[k.verified,'Verified records'],[k.changes,'Changes, last 30 days'],[k.appts,'Upcoming appointments'],[k.needs,'Need verification']].map(([v,l])=>`<div><div class="v">${v}</div><div class="k">${l}</div></div>`).join('')}</div>
+  <details class="more" data-k="feed" ${UI.open.feed?'open':''}><summary>${svg('chev')}Recent competitive changes and activity</summary><div class="inner">${feedHTML()}</div></details>`;
+}
+
+/* ---------- Competitor Insights ---------- */
+function coCard(c){
+  const os=S.obs.filter(o=>o.compId===c.id&&o.verification!=='Rejected'),lv=os.filter(o=>o.verifiedOn).map(o=>o.verifiedOn).sort().pop(),fk={};os.forEach(o=>{const f=freshness(o).k;fk[f]=(fk[f]||0)+1});
+  return `<article class="co" data-a="openComp" data-id="${c.id}"><div><h3><button data-a="openComp" data-id="${c.id}">${esc(c.name)}</button></h3><div style="margin:4px 0 0 -4px">${demoChip(c)}${candChip(c)}${c.archived?'<span class="chip arch">Archived</span>':''}</div></div>
+  <div class="sub2">${esc(c.community)}${c.location==='Not verified'?'':', '+esc(c.location)}${c.distanceKm!=null?', '+c.distanceKm+' km from Avalon':''}</div>
+  <div class="stats"><div><b>${S.products.filter(p=>p.compId===c.id).length||'—'}</b><span>Products</span></div><div><b>${os.length}</b><span>Records</span></div><div><b>${lv?fmtD(lv):'Never'}</b><span>Last verified</span></div></div>
+  <div class="health">${os.length?Object.keys(FLABEL).filter(k=>fk[k]).map(k=>`<span class="pill f-${k}">${fk[k]} ${FLABEL[k].toLowerCase()}</span>`).join(''):'<span class="nv" style="white-space:normal">No data yet. A first verified observation will appear here.</span>'}</div>
+  <div class="acts"><button class="btn sm" data-a="ssCard" data-id="${c.id}">Battlecard</button><button class="btn sm" data-a="cmpComp" data-id="${c.id}">Compare with Avalon</button></div></article>`;
+}
+function vInsights(){
+  const d=UI.dir,q=d.q.trim().toLowerCase(),canEdit=me().edit;
+  const rows=S.competitors.filter(c=>(d.archived||!c.archived)&&(d.status==='all'||c.status===d.status)&&(!q||(c.name+' '+c.community+' '+c.location).toLowerCase().includes(q))).sort((a,b)=>a.archived-b.archived||(a.status==='tracked'?0:1)-(b.status==='tracked'?0:1)||a.name.localeCompare(b.name));
+  return `<div class="ph"><div><h1>Competitor Insights</h1><p>Every builder near Avalon, with the evidence behind each record. Open one to see its products, pricing, history and sources.</p></div>
+  <div class="acts"><button class="btn" data-a="newObs">${svg('plus')}Submit observation</button><button class="btn pri" data-a="compForm" ${canEdit?'':'disabled title="Your role can view but not edit competitors"'}>Add competitor</button></div></div>
+  <div class="filters"><input class="in" type="search" data-f="dirq" placeholder="Filter by builder, community or location" value="${esc(d.q)}" aria-label="Filter competitors" style="min-width:280px">
+  <select class="in" data-f="dirStatus" aria-label="Status"><option value="all">All builders</option><option value="candidate" ${d.status==='candidate'?'selected':''}>Candidates</option><option value="tracked" ${d.status==='tracked'?'selected':''}>Tracked</option></select>
+  <label class="tog"><input type="checkbox" data-f="dirArch" ${d.archived?'checked':''}> Show archived</label><span class="faint small">${rows.length} shown</span></div>
+  ${rows.length?`<div class="co-grid">${rows.map(coCard).join('')}</div>`:`<div class="panel">${emptyState('No competitors match these filters.')}</div>`}`;
+}
+
+/* ---------- Community Comparison ---------- */
+function ccHTML(base,p,max){
+  if(!p){const w=Math.round(base.price/max*100);return `<article class="cc is-base"><div class="tagl">Empire, Avalon${demoChip(base)}</div><h3>${esc(base.name)}</h3><div class="price">${money(base.price)}</div><div class="hbar"><span style="width:${w}%"></span></div><dl><dt>Home</dt><dd>${base.type}, ${base.lot}′ lot</dd><dt>Size</dt><dd>${base.sqft} sq ft</dd><dt>Beds, baths</dt><dd>${base.beds} bd, ${base.baths} ba</dd><dt>Incentive</dt><dd>${esc(base.incentive)}</dd><dt>Deposit</dt><dd>${esc(base.deposit)}</dd><dt>Occupancy</dt><dd>${esc(base.occupancy)}</dd></dl><div class="foot"><span>Baseline, Empire data (demo)</span></div></article>`}
+  const c=compById(p.compId),pr=best(p.id,'Starting price'),inc=liveMulti(p.id,FIELDS.incentive),dep=best(p.id,'Deposit structure'),oc=best(p.id,'Occupancy');
+  const pv=quotable(pr)&&pr.amount!=null?pr.amount:null,cov=[quotable(pr),quotable(oc),quotable(dep),inc.some(quotable)].filter(Boolean).length,diffs=[];
+  if(pv!=null){const d=pv-base.price;if(d>0)diffs.push(['plus','Avalon starts '+money(d)+' lower']);else if(d<0)diffs.push(['minus','Starts '+money(-d)+' below Avalon'])}
+  const r=sqRange(base.sqft);if(r){if(p.sqft>r[1])diffs.push(['minus','Larger: '+p.sqft.toLocaleString('en-CA')+' sq ft']);else if(p.sqft<r[0])diffs.push(['plus','Smaller: '+p.sqft.toLocaleString('en-CA')+' vs '+base.sqft+' sq ft'])}
+  if(quotable(oc)){const a=occIdx(oc.value),b=occIdx(base.occupancy);if(a!=null&&b!=null&&a!==b)diffs.push(a<b?['minus','Earlier move-in: '+oc.value]:['plus','Later move-in: '+oc.value])}
+  inc.filter(quotable).forEach(o=>diffs.push(['minus','Offering '+lc1(o.value)]));
+  return `<article class="cc"><div class="tagl">${esc(c.name)}${demoChip(c)}</div><h3>${esc(p.name)}</h3><div class="price">${pv!=null?money(pv):'<span class="nv" style="font-size:15px">Price not verified</span>'}</div><div class="hbar">${pv!=null?`<span style="width:${Math.round(pv/max*100)}%"></span>`:''}</div>
+  ${mismatch(base,p).map(m=>`<span class="flag">Not like-for-like: ${esc(m)}</span>`).join('')}
+  <dl><dt>Home</dt><dd>${p.type}, ${p.lot}′ lot</dd><dt>Size</dt><dd>${p.sqft.toLocaleString('en-CA')} sq ft</dd><dt>Beds, baths</dt><dd>${p.beds} bd, ${p.baths} ba</dd><dt>Price</dt><dd>${evCell(pr)}</dd><dt>Incentives</dt><dd>${inc.length?inc.map(o=>evCell(o,o.field)).join(''):NV}</dd><dt>Deposit</dt><dd>${evCell(dep)}</dd><dt>Occupancy</dt><dd>${evCell(oc)}</dd></dl>
+  ${diffs.length?`<ul class="diffs">${diffs.map(([k,t])=>`<li><span class="${k}" aria-hidden="true">${k==='plus'?'+':'−'}</span><span><span class="sr">${k==='plus'?'Empire advantage: ':'Competitor advantage: '}</span>${esc(t)}</span></li>`).join('')}</ul>`:''}
+  <div class="foot"><span>Source coverage: ${cov} of 4 verified</span><label class="tog"><input type="checkbox" data-a="selRow" data-id="${p.id}" ${UI.cmp.sel.includes(p.id)?'checked':''}> Select</label></div></article>`;
+}
+function vComparison(){
+  const C=UI.cmp,base=S.empire.find(p=>p.id===C.base)||S.empire[0],sel=C.sel.filter(id=>prodById(id));
+  const cands=S.products.filter(p=>!compArch(p.compId)&&p.type===base.type&&(C.comp==='all'||p.compId===C.comp)).sort((a,b)=>Math.abs(a.lot-base.lot)-Math.abs(b.lot-base.lot)).slice(0,3);
+  const max=Math.max(base.price,...cands.map(p=>{const o=best(p.id,'Starting price');return quotable(o)&&o.amount!=null?o.amount:0}),1);
+  const others=S.products.filter(p=>!compArch(p.compId)&&p.type!==base.type).length,candN=S.competitors.filter(c=>!c.archived&&c.status==='candidate').length;
+  const note=[others?plural(others,'competitor home')+' of other types aren’t compared with this one':'',candN?plural(candN,'candidate builder')+' have no verified data yet':''].filter(Boolean);
+  return `<div class="ph"><div><h1>Community Comparison</h1><p>Avalon against nearby builders. Only like-for-like homes are compared side by side, and anything unverified is labelled.</p></div>
+  <div class="acts"><button class="btn" data-a="compare" ${sel.length?'':'disabled title="Select homes first"'}>Compare selected (${sel.length})</button><button class="btn" data-a="exportCmp">Export CSV${sel.length?' (selected)':''}</button><button class="btn" data-a="printCmp">Print</button></div></div>
+  <div class="filters"><span class="small muted">Compare against</span><div class="seg" role="group" aria-label="Avalon home">${S.empire.map(p=>`<button aria-pressed="${p.id===base.id}" data-a="cmpBaseBtn" data-id="${p.id}">${esc(p.name.replace('Avalon ',''))}</button>`).join('')}</div>${C.comp!=='all'&&compById(C.comp)?`<span class="ctx">Showing ${esc(compById(C.comp).name)} only <button class="btn sm link" data-a="cmpClear" style="padding:0 0 0 4px">Show all</button></span>`:''}</div>
+  <div class="cmp-cards">${ccHTML(base,null,max)}${cands.map(p=>ccHTML(base,p,max)).join('')}</div>
+  ${cands.length?'':`<div class="panel" style="margin-bottom:12px">${emptyState('No competitor '+base.type.toLowerCase()+' homes on file'+(C.comp!=='all'?' for this builder':'')+'. Missing data doesn’t mean they don’t sell one.')}</div>`}
+  <p class="small muted">+ marks an Empire advantage, − a competitor advantage, using verified records only.${note.length?' '+note.join('. ')+'. They appear in the detailed table.':''}</p>
+  <details class="more" data-k="cmpTable" ${UI.open.cmpTable?'open':''}><summary>${svg('chev')}Detailed comparison table</summary><div class="inner" style="padding:16px 20px">${cmpTable()}</div></details>`;
+}
+
+/* ---------- Appointments ---------- */
+function apptCard(a){const p=prepProgress(a);return `<article class="appt"><div class="when"><div class="d">${dayLabel(a.date)}</div><div class="tm">${fmtT(a.time)}</div></div><div><h3><button data-a="openAppt" data-id="${a.id}">${esc(a.customer)}</button>${demoChip(a)}</h3><div class="meta"><span>${a.prefLot?a.prefLot+'′ ':''}${esc(a.prefType)}, ${a.beds} bd</span><span>${money(a.budgetMin)}–${money(a.budgetMax)}</span><span>${esc(a.consultant)}</span><span>${esc(a.leadSource)}</span><span>${esc(a.status)}</span></div></div><div class="prep">${pbar(p)}<div class="pl">${prepLabel(a)}</div></div><div class="acts"><button class="btn sm ${a.prepDone?'':'pri'}" data-a="prep" data-id="${a.id}">${a.prepDone?'Review':a.briefing?'Continue':'Prepare'}</button><button class="btn sm" data-a="openAppt" data-id="${a.id}">Details</button></div></article>`}
+function vAppointments(){
+  if(me().customers==='none')return `<div class="ph"><div><h1>Appointments</h1></div></div><div class="panel">${emptyState('Customer appointments aren’t available for the Marketing role. Switch to a sales role to see them.')}</div>`;
+  const A=UI.appt,rows=apptFilter(),cons=[...new Set(visibleAppts().map(a=>a.consultant))];
+  const title={today:'Today’s appointments',tomorrow:'Tomorrow’s appointments',week:'The next 7 days',date:'Appointments on '+fmtD(A.date)}[A.view];
+  return `<div class="ph"><div><h1>${title}</h1><p>${me().customers==='own'?'Your appointments':'Your team’s appointments'}, with preparation progress. Customer details come from a demo CRM and are fictional.</p></div></div>
+  <div class="filters"><div class="seg" role="group" aria-label="Date">${[['today','Today'],['tomorrow','Tomorrow'],['week','Next 7 days']].map(([k,l])=>`<button aria-pressed="${A.view===k}" data-a="apptView" data-v="${k}">${l}</button>`).join('')}</div>
+  <input class="in" type="date" data-f="apptDate" value="${A.view==='date'?A.date:''}" aria-label="Pick a date">
+  ${cons.length>1?`<select class="in" data-f="apptCons" aria-label="Consultant"><option value="all">All consultants</option>${cons.map(c=>`<option ${A.consultant===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:''}
+  <input class="in" type="search" data-f="apptq" placeholder="Search customers" value="${esc(A.q)}" aria-label="Search customers"></div>
+  ${rows.length?`<div class="alist">${rows.map(apptCard).join('')}</div>`:`<div class="panel">${emptyState('No appointments for this selection.',A.view!=='week'?' <br><button class="btn sm" data-a="apptView" data-v="week">See the next 7 days</button>':'')}</div>`}`;
+}
+
+/* ---------- Tools & Settings ---------- */
+function vTools(){
+  const T=UI.tools.tab,n=kpis().needs;
+  return `<div class="ph"><div><h1>Tools &amp; Settings</h1><p>Verification, integrations, demo data and the activity log.</p></div></div>
+  <div class="tabs" role="tablist" style="margin-bottom:22px"><button role="tab" aria-selected="${T==='verification'}" data-a="toolsTab" data-tab="verification">Verification<span class="n">${n}</span></button><button role="tab" aria-selected="${T==='settings'}" data-a="toolsTab" data-tab="settings">Integrations and data</button></div>
+  ${T==='verification'?vVerification():vIntegrations()}`;
+}
+
+/* ---------- Secret Shopper (signature) ---------- */
+function offerObs(){return liveObs().filter(o=>['price','incentive','deposit'].includes(o.category))}
+function verifyItems(){const seen=new Set(),out=[];attention().forEach(x=>{if(!seen.has(x.o.id)){seen.add(x.o.id);out.push(x)}});liveObs().filter(o=>o.verification!=='Verified'&&!seen.has(o.id)).forEach(o=>{seen.add(o.id);out.push({kind:'Awaiting review',cls:'f-unverified',o,text:SRC[o.sourceType]+', '+rel(o.observed)})});return out}
+function howHTML(){return `<section class="how3" aria-label="How Secret Shopper works">${[['file','Step 1','Gather intelligence','Collect competitor information from authorized sources: sales-centre observations, buyer feedback, published offers and official materials.'],['verification','Step 2','Verify the details','Review the source, date, evidence and confidence, and whether the information is still current.'],['bulb','Step 3','Use the insight','See how it compares with Empire and prepare a relevant, factual customer conversation.']].map(([ic,k,h,p])=>`<div class="hs"><div class="ic">${svg(ic)}</div><div class="k">${k}</div><h3>${h}</h3><p>${p}</p></div>`).join('')}</section><div style="text-align:right;margin-bottom:6px"><button class="btn sm link" data-a="ssHow">Hide this explanation</button></div>`}
+function ssFilters(T){
+  const q=UI.ss.qf,cs=S.competitors.filter(c=>!c.archived),active=q.comp!=='all'||q.cat!=='all'||q.conf!=='any'||q.fresh!=='all';
+  return `<div class="filters" role="group" aria-label="Filters"><select class="in" aria-label="Region"><option>Ontario</option></select><select class="in" aria-label="Empire community"><option>Near Avalon</option></select>
+  <select class="in" data-f="ssfComp" aria-label="Competitor"><option value="all">All competitors</option>${cs.map(c=>`<option value="${c.id}" ${q.comp===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select>
+  ${T==='selling'?'':`<select class="in" data-f="ssfCat" aria-label="Insight type"><option value="all">All insight types</option>${Object.entries(CATS).filter(([k])=>T!=='offering'||['price','incentive','deposit'].includes(k)).map(([k,l])=>`<option value="${k}" ${q.cat===k?'selected':''}>${l}</option>`).join('')}</select>`}
+  <select class="in" data-f="ssfConf" aria-label="Confidence"><option value="any">Any confidence</option><option value="Medium" ${q.conf==='Medium'?'selected':''}>Medium or higher</option><option value="High" ${q.conf==='High'?'selected':''}>High only</option></select>
+  <select class="in" data-f="ssfFresh" aria-label="Freshness"><option value="all">Any freshness</option>${['current','review','stale','expired','conflict','unverified'].map(k=>`<option value="${k}" ${q.fresh===k?'selected':''}>${FLABEL[k]}</option>`).join('')}</select>
+  ${active?'<button class="btn sm link" data-a="ssfReset">Clear filters</button>':''}</div>`;
+}
+function ssOffering(){
+  const list=offerObs().filter(obsPass),groups=[['incentive','Promotions and incentives'],['price','Pricing'],['deposit','Deposit structures']];
+  if(!list.length)return `<div class="panel">${emptyState('No competitor offers match these filters. Missing data doesn’t mean a builder has no offer.',' <br><button class="btn sm" data-a="newObs">Submit an observation</button>')}</div>`;
+  return groups.map(([k,l])=>{const g=list.filter(o=>o.category===k).sort(byObsDesc);return g.length?`<div class="group-h">${svg(CAT_ICON[k])}${l} <span class="faint">${g.length}</span></div><div class="ins-grid">${g.map(o=>obsCardHTML(o)).join('')}</div>`:''}).join('');
+}
+function prodCard(p){const e=closestEmp(p);return `<article class="cc"><div class="tagl">${p.type}</div><h3>${esc(p.name)}</h3><dl><dt>Lot</dt><dd>${p.lot}′</dd><dt>Size</dt><dd>${p.sqft.toLocaleString('en-CA')} sq ft</dd><dt>Beds, baths</dt><dd>${p.beds} bd, ${p.baths} ba</dd><dt>Price</dt><dd>${evCell(best(p.id,'Starting price'))}</dd><dt>Occupancy</dt><dd>${evCell(best(p.id,'Occupancy'))}</dd><dt>Closest Avalon</dt><dd>${e?esc(e.name):'<span class="nv">No like-for-like home</span>'}</dd></dl><div class="foot"><button class="btn sm" data-a="cmpProd" data-id="${p.id}">Compare with Empire</button></div></article>`}
+function ssSelling(){
+  const q=UI.ss.qf,cs=S.competitors.filter(c=>!c.archived&&(q.comp==='all'||c.id===q.comp)),withP=cs.filter(c=>S.products.some(p=>p.compId===c.id)),without=cs.filter(c=>!S.products.some(p=>p.compId===c.id));
+  const extra=liveObs().filter(o=>['floorplan','inventory','launch'].includes(o.category)).filter(obsPass).sort(byObsDesc);
+  return withP.map(c=>`<div class="group-h">${svg('home')}${esc(c.name)}${demoChip(c)} <span class="faint" style="font-weight:400">${esc(c.community)}</span></div><div class="cmp-cards">${S.products.filter(p=>p.compId===c.id).map(prodCard).join('')}</div>`).join('')
+   +(extra.length?`<div class="group-h">${svg('layout')}Releases, floorplans and quick move-ins</div><div class="ins-grid">${extra.map(o=>obsCardHTML(o)).join('')}</div>`:'')
+   +(without.length?`<p class="small muted" style="margin-top:22px">No products on file yet for ${without.map(c=>esc(c.name)).join(', ')}. That means nothing has been verified, not that they have nothing to sell.</p>`:'')
+   +(!withP.length&&!extra.length?`<div class="panel">${emptyState('No products match these filters.')}</div>`:'');
+}
+function ssVerify(){
+  const order={Conflicting:0,Expired:1,'Missing source':2,'Unverified report':3,'Awaiting review':4,Outdated:5,'Promotion ending':6};
+  const items=verifyItems().filter(x=>obsPass(x.o)).sort((a,b)=>(order[a.kind]??9)-(order[b.kind]??9));
+  return `<p class="muted" style="margin:0 0 16px">Anything here stays out of talking points until it’s resolved. ${me().review?'You can approve or reject from each card.':'Reviewers approve or reject. You can assign one.'}</p>`+(items.length?`<div class="ins-grid">${items.map(x=>obsCardHTML(x.o,{reason:x,actions:true})).join('')}</div>`:`<div class="panel">${emptyState('Nothing needs verification right now.')}</div>`);
+}
+function vShopper(){
+  const T=UI.ss.tab,evs7=shopEvents(7);
+  const Q=[['changing','What is changing?','briefing'],['offering','What are competitors offering?','gift'],['selling','What products are they selling?','home'],['compare','How does Empire compare?','comparison'],['verify','What should I verify?','verification']];
+  const counts={changing:evs7.filter(e=>e.score>=3).length,offering:offerObs().length,selling:S.products.filter(p=>!compArch(p.compId)).length,compare:S.competitors.filter(c=>!c.archived&&c.status==='tracked').length,verify:verifyItems().length};
+  const body=T==='changing'?ssBrief():T==='offering'?ssOffering():T==='selling'?ssSelling():T==='compare'?ssCards():T==='verify'?ssVerify():ssShop();
+  return `<section class="ss-hero"><div class="eyebrow">${svg('shopper')}Secret Shopper</div><h1>Know what buyers are hearing elsewhere.</h1><p>Explore competitor intelligence gathered from sales-centre observations, buyer reports, published offers and supporting documentation. Understand what’s known, what’s uncertain, and how to use it in your next conversation.</p>
+  <div class="acts"><button class="btn pri" data-a="ssTab" data-tab="offering">Explore competitor insights</button><button class="btn" data-a="go" data-to="comparison">Compare a community</button><button class="btn" data-a="newObs">${svg('plus')}Submit a new observation</button><button class="btn link" data-a="ssHow" aria-expanded="${UI.how}">${svg('info')}How it works</button></div></section>
+  ${UI.how?howHTML():''}
+  <div class="qtabs" role="tablist" aria-label="Sales questions">${Q.map(([k,l,ic])=>`<button role="tab" aria-selected="${T===k||(T==='shop'&&k==='compare')}" data-a="ssTab" data-tab="${k}">${svg(ic)}${l}<span class="n">${counts[k]}</span></button>`).join('')}</div>
+  ${T!=='compare'&&T!=='shop'?ssFilters(T):''}
+  ${body}`;
+}
+
+/* ---------- guided prep + insight drawers, explanation tips ---------- */
+function dPrep(st){
+  const a=apptById(st.id);if(!a||!visibleAppts().includes(a))return `<div class="dh"><div class="t"><h2>Appointment</h2></div>${closeBtn()}</div><div class="db">${emptyState('Your role can’t open this appointment.')}</div>`;
+  if(!a.briefing)return `<div class="dh"><div class="t"><h2>Prepare for ${esc(a.customer)}</h2></div>${closeBtn()}</div><div class="db">${emptyState('No briefing yet.',` <br><button class="btn pri" data-a="genBrief" data-id="${a.id}">Generate briefing</button>`)}</div>`;
+  const br=a.briefing,B=br.B,s=a.prepSteps||{},n=prepCount(a);
+  const L=(arr,empty)=>arr&&arr.length?`<ul>${arr.map(x=>`<li>${esc(x.t||x)}${refs(x.ids)}</li>`).join('')}</ul>`:`<p class="faint small" style="margin:0">${empty||'Nothing on file.'}</p>`;
+  const steps=[
+    ['users','Know your buyer',`<p style="margin:0 0 8px">${esc(B.summary)}</p><h4>What they’ve told us <span class="tag st">Customer-stated</span></h4>${L(B.stated)}`],
+    ['home','Find the right homes',`${L(B.empire)}<p class="faint small" style="margin:6px 0 0">Empire prices here are demo data.</p>`],
+    ['shopper','Know the competition',`<h4>Verified comparisons <span class="tag vf">Verified</span></h4>${L(B.competitors,'No verified like-for-like competitor prices.')}<h4>Current competitor offers <span class="tag vf">Verified</span></h4>${L(B.incentives,'No verified offers on matching homes.')}${B.market&&B.market.length?`<h4>Recent changes that match this buyer</h4>${L(B.market)}`:''}<h4>Don’t quote yet <span class="tag cau">Unverified or conflicting</span></h4>${L(B.caution,'Nothing flagged.')}`],
+    ['alert','Prepare for objections',L(B.objections,'No objections recorded. Ask what else they’re considering.')],
+    ['bulb','Plan your conversation',`<h4>Discovery questions <span class="tag rec">Suggestion</span></h4>${L(B.questions)}<h4>Talking points <span class="tag rec">Suggestion, review before use</span></h4>${L(B.talking)}<h4>After the appointment</h4>${L(B.followups)}`]
+  ];
+  return `<div class="dh"><div class="t"><div class="eyebrow">${svg('appointments')}${dayLabel(a.date)}, ${fmtT(a.time)}, ${esc(a.community)}</div><h2>Prepare for ${esc(a.customer)}</h2><div style="margin-top:12px">${pbar(a.prepDone?1:n/5)}<div class="small muted" style="margin-top:6px">${a.prepDone?'Preparation complete.':n+' of 5 steps reviewed.'} About 60 to 90 seconds to read.</div></div></div>${closeBtn()}</div>
+  <div class="db"><ol class="steps">${steps.map(([ic,h,body],i)=>{const k=i+1,done=!!s[k];return `<li class="step ${done?'done':''}"><div class="sn" aria-hidden="true">${done?svg('check'):k}</div><div><h3>${svg(ic)}<span><span class="sr">Step ${k}: </span>${h}</span></h3>${body}<label class="done-t"><input type="checkbox" data-a="prepStep" data-id="${a.id}" data-i="${k}" ${done?'checked':''}> Reviewed</label></div></li>`}).join('')}</ol>
+  <p class="faint small" style="margin:0">Generated ${new Date(br.at).toLocaleString('en-CA',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})} from the records on file. Regenerate to pick up changes.</p></div>
+  <div class="df"><button class="btn ${a.prepDone?'':'pri'}" data-a="prepDone" data-id="${a.id}">${a.prepDone?'Reopen preparation':'Mark preparation complete'}</button><button class="btn" data-a="genBrief" data-id="${a.id}">Regenerate</button><button class="btn" data-a="printBrief" data-id="${a.id}">Print</button><button class="btn" data-a="exportBrief" data-id="${a.id}">Export</button><button class="btn link" data-a="openAppt" data-id="${a.id}">Appointment details</button></div>`;
+}
+function dIns(st){
+  const e=shopEvents(90).find(x=>x.id===st.id);if(!e)return dObs({id:st.id});
+  const o=e.o,c=compById(o.compId),vis=e.matches.filter(m=>canSee(m.x));
+  return `<div class="dh"><div class="t"><div class="eyebrow">${svg(CAT_ICON[o.category]||'info')}${esc(CATS[o.category]||'Update')}, ${esc(c.name)}</div><h2>${esc(headOf(e))}</h2><div class="s">${scoreBadge(e)}${freshHTML(o)}${vsHTML(o.verification)}${confHTML(o)}${demoChip(c)}</div></div>${closeBtn()}</div>
+  <div class="db">
+  ${e.conflict?'<div class="ss-banner" style="margin:0 0 18px">Verification required: conflicting competitive information.</div>':!e.usable?'<div class="ss-banner" style="margin:0 0 18px">Potential change, verification underway. Not a talking point yet.</div>':''}
+  <div class="sec"><h3>What changed</h3><p style="margin:0 0 10px">${esc(e.title)}.</p><div class="delta"><div class="old"><span class="k">Before</span><b>${esc(o.prev||'Not recorded')}</b></div><span class="arr" aria-hidden="true">→</span><div><span class="k">Now</span><b>${esc(o.value)}</b></div></div><p class="small muted" style="margin:8px 0 0">${esc(SRC[o.sourceType])}, observed ${fmtD(o.observed)}${o.verifiedOn?', verified '+fmtD(o.verifiedOn)+' by '+esc(o.reviewer):''}.</p></div>
+  <div class="sec"><h3>Why it matters</h3><p style="margin:0">${esc(e.ov.label)}. ${esc(exposureText(e))}</p></div>
+  <div class="sec"><h3>Recommended action</h3><p style="margin:0">${esc(eventAction(e))}</p>${e.usable?`<p style="margin:8px 0 0"><span class="tag rec">Suggestion</span> ${esc(eventTalk(e))}</p>`:''}</div>
+  <div class="sec">${useHelpHTML(o)}</div>
+  ${me().customers==='none'?'':`<div class="sec"><h3>Affected prospects <span class="faint small" style="font-weight:400">${vis.length}</span></h3>${vis.length?prospectList(e,vis):'<p class="faint small" style="margin:0">None of your prospects match.</p>'}</div>`}
+  <div class="sec"><h3>History</h3>${historyHTML(o)}</div>
+  <div class="sec"><details class="how"><summary>How this was scored</summary>Change significance ${e.sig} × product overlap ${e.ov.f} × prospect exposure ${e.expF} × immediacy ${e.imm} = ${e.raw.toFixed(2)}, rounded to ${e.score}. Confidence is assessed separately: ${esc(confidence(o).why)}.</details></div>
+  </div>
+  <div class="df"><button class="btn pri" data-a="openObs" data-id="${o.id}">${svg('file')}View full evidence</button><button class="btn" data-a="cmpObs" data-id="${o.id}">Compare with Empire</button><button class="btn" data-a="ssCard" data-id="${c.id}">Battlecard</button>${!e.usable?`<button class="btn" data-a="assign" data-id="${o.id}">Assign verification</button>`:''}</div>`;
+}
+function tipHTML(){
+  const t=UI.tip;if(!t)return '';const o=obsById(t.id);if(!o)return '';const c=confidence(o),f=freshness(o);
+  const body=t.k==='conf'?`<div class="tip-h">Confidence: ${c.level}</div><p>How reliable is this? ${esc(CONF_DESC[c.level])}.</p><p class="faint">This record: ${esc(c.why)}.</p>`:`<div class="tip-h">Freshness: ${esc(f.label)}</div><p>Is it still current? ${esc(FRESH_DESC[f.k]||'')}</p><p class="faint">This record: ${esc(f.why)}.</p>`;
+  return `<div class="tip ${t.up?'up':''}" role="dialog" aria-label="Explanation" style="top:${t.top}px;left:${t.left}px">${body}<p class="small">Source: ${esc(SRC[o.sourceType])}${o.sourceRef?', '+esc(o.sourceRef):', none attached'}</p><button class="btn sm" data-a="openObs" data-id="${o.id}">${svg('file')}View evidence</button></div>`;
+}
+function renderTip(){const el=document.getElementById('tip');if(el)el.innerHTML=tipHTML()}
 
 /* ---------- drawers ---------- */
 const srcLink=r=>/^https?:\/\//i.test(r)?`<a href="${esc(r)}" target="_blank" rel="noopener noreferrer">${esc(r)}</a>`:esc(r);
@@ -1089,10 +1498,11 @@ function dObs(st){
   const c=compById(o.compId),p=o.prodId?prodById(o.prodId):null,cf=confidence(o),f=freshness(o),cfl=(cx().conflict[o.id]||[]).map(obsById).filter(Boolean);
   return `<div class="dh"><div class="t"><h2>${esc(o.field)}: ${esc(o.value)}</h2><div class="s"><span>${o.id}</span><span>${esc(subj(o))}</span>${demoChip(o)}</div></div>${closeBtn()}</div>
   <div class="db">
-    <div class="sec"><h3>Assessment</h3><dl class="dl"><dt>Confidence</dt><dd>${confHTML(o)}<div class="faint small">${esc(cf.why)}</div></dd><dt>Freshness</dt><dd>${freshHTML(o)}<div class="faint small">${esc(f.why)}</div></dd><dt>Review status</dt><dd>${vsHTML(o.verification)}</dd><dt>Assigned to</dt><dd>${o.assignee?esc(o.assignee):'Unassigned'}</dd></dl></div>
+    <div class="sec"><h3>Assessment</h3><p class="small muted" style="margin:0 0 12px">Confidence is how reliable the source is. Freshness is whether it’s still current. They’re judged separately, so tap either one for the reasoning.</p><dl class="dl"><dt>Confidence</dt><dd>${confHTML(o)}<div class="faint small">${esc(cf.why)}</div></dd><dt>Freshness</dt><dd>${freshHTML(o)}<div class="faint small">${esc(f.why)}</div></dd><dt>Review status</dt><dd>${vsHTML(o.verification)}</dd><dt>Assigned to</dt><dd>${o.assignee?esc(o.assignee):'Unassigned'}</dd></dl></div>
     <div class="sec"><h3>Observation</h3><dl class="dl"><dt>Builder</dt><dd><button class="btn link" style="padding:0" data-a="openComp" data-id="${c.id}">${esc(c.name)}</button></dd><dt>Product</dt><dd>${p?esc(p.name)+' ('+p.type+', '+p.lot+'′)':'Community level'}</dd><dt>Category</dt><dd>${CATS[o.category]}</dd><dt>Previous value</dt><dd>${o.prev?esc(o.prev):'—'}</dd><dt>Current value</dt><dd><strong>${esc(o.value)}</strong></dd><dt>Observed</dt><dd>${fmtD(o.observed)}</dd>${o.expires?`<dt>Advertised end</dt><dd>${fmtD(o.expires)}</dd>`:''}<dt>Revalidate by</dt><dd>${o.revalidateBy?fmtD(o.revalidateBy):'Not set'}</dd><dt>Submitted by</dt><dd>${esc(o.submittedBy)}</dd></dl></div>
     <div class="sec"><h3>Evidence</h3><dl class="dl"><dt>Source type</dt><dd>${esc(SRC[o.sourceType])}</dd><dt>Source tier</dt><dd>${esc(TIER_LABEL[TIER[o.sourceType]]||'Unclassified')}</dd><dt>Reference</dt><dd>${o.sourceRef?srcLink(o.sourceRef):'<span class="flag">No source attached</span>'}</dd><dt>Corroborating reports</dt><dd>${o.corroborations||0}</dd><dt>Verified</dt><dd>${o.verifiedOn?fmtD(o.verifiedOn)+' by '+esc(o.reviewer):'Not verified'}</dd>${o.notes?`<dt>Notes</dt><dd>${esc(o.notes)}</dd>`:''}</dl></div>
     ${cfl.length?`<div class="sec"><h3>Conflicting evidence <span class="pill f-conflict">${cfl.length}</span></h3>${cfl.map(x=>`<div class="row-item" style="padding:8px 0"><div><strong>${esc(x.value)}</strong> <span class="faint small">${x.id}, ${esc(SRC[x.sourceType])}, ${fmtD(x.observed)}</span></div><div class="ri-acts"><button class="btn sm" data-a="openObs" data-id="${x.id}">Open</button></div></div>`).join('')}</div>`:''}
+    <div class="sec"><h3>Value history</h3>${historyHTML(o)}</div>
     <div class="sec"><h3>Decision history</h3><ul class="timeline">${o.history.slice().reverse().map(h=>`<li><div class="when">${fmtD(h.at)}</div>${esc(h.action)} by ${esc(h.by)}${h.note?`<div class="faint small">${esc(h.note)}</div>`:''}</li>`).join('')}</ul></div>
   </div>
   <div class="df">${actionBtns(o,false)}</div>`;
@@ -1258,25 +1668,29 @@ function syncObsForm(){
 
 /* ---------- layer and main render ---------- */
 function renderLayer(){
+  const prev=document.querySelector('#layer .drawer .db'),st=prev?prev.scrollTop:0;
   const top=UI.stack[UI.stack.length-1];let h='';
-  if(top){const inner=top.type==='comp'?dComp(top):top.type==='obs'?dObs(top):top.type==='appt'?dAppt(top):top.type==='compare'?dCompare():'';h+=`<div class="scrim" data-a="closeDrawer"></div><aside class="drawer ${top.type==='compare'?'wide':''}" role="dialog" aria-modal="true" aria-label="Details">${inner}</aside>`}
+  if(top){const inner=top.type==='comp'?dComp(top):top.type==='obs'?dObs(top):top.type==='appt'?dAppt(top):top.type==='compare'?dCompare():top.type==='prep'?dPrep(top):top.type==='ins'?dIns(top):'';h+=`<div class="scrim" data-a="closeDrawer"></div><aside class="drawer ${top.type==='compare'?'wide':''}" role="dialog" aria-modal="true" aria-label="Details">${inner}</aside>`}
   h+=mHTML();
   document.getElementById('layer').innerHTML=h;
+  const key=top?top.type+':'+(top.id||'')+':'+(top.tab||'')+':'+UI.stack.length:'';
+  if(key&&key===UI._dk){const nb=document.querySelector('#layer .drawer .db');if(nb)nb.scrollTop=st}
+  UI._dk=key;
   if(UI.modal&&UI.modal.type==='obs')syncObsForm();
 }
 function pushDrawer(d){UI.stack.push(d);renderLayer();setTimeout(()=>{const b=document.querySelector('.drawer [data-a="back"]');b&&b.focus()},20)}
 function render(){
   const ae=document.activeElement,fk=ae&&ae.dataset?ae.dataset.f:null,pos=ae&&typeof ae.selectionStart==='number'?ae.selectionStart:null,wasSearch=ae&&ae.id==='gsearch';
   renderNav();renderTop();
-  const v={overview:vOverview,shopper:vShopper,directory:vDirectory,avalon:vAvalon,verification:vVerification,appointments:vAppointments,integrations:vIntegrations}[UI.route];
+  const v={briefing:vBriefing,shopper:vShopper,insights:vInsights,appointments:vAppointments,comparison:vComparison,tools:vTools}[UI.route]||vBriefing;
   document.getElementById('view').innerHTML=v();
   renderLayer();
   if(fk){const el=document.getElementById('main').querySelector(`[data-f="${fk}"]`);if(el){el.focus();try{if(pos!=null)el.setSelectionRange(pos,pos)}catch(e){}}}
   if(wasSearch){const g=document.getElementById('gsearch');g.focus();try{g.setSelectionRange(pos,pos)}catch(e){}renderSearch()}
 }
 function toast(msg,err){const t=document.createElement('div');t.className='toast'+(err?' err':'');t.textContent=msg;document.getElementById('toasts').appendChild(t);setTimeout(()=>t.remove(),3800)}
-function go(r){UI.route=r;UI.stack=[];UI.pop=null;if(location.hash!=='#'+r)location.hash=r;render();document.getElementById('main').scrollTop=0}
-window.addEventListener('hashchange',()=>{const r=location.hash.slice(1);if(VIEWS.includes(r)&&r!==UI.route){UI.route=r;UI.stack=[];UI.pop=null;render();document.getElementById('main').scrollTop=0}});
+function go(r){r=routeOf(r);UI.route=r;UI.stack=[];UI.pop=null;UI.tip=null;renderTip();if(location.hash!=='#'+r)location.hash=r;render();document.getElementById('main').scrollTop=0}
+window.addEventListener('hashchange',()=>{const r=routeOf(location.hash);if(r!==UI.route){UI.route=r;UI.stack=[];UI.pop=null;render();document.getElementById('main').scrollTop=0}});
 
 /* ---------- mutations ---------- */
 function setVer(o,status,note){
@@ -1386,28 +1800,45 @@ const A={
   ssTab(d){UI.ss.tab=d.tab;render()},
   ssLow(){UI.ss.showLow=!UI.ss.showLow;render()},
   ssProspects(d){UI.ss.open[d.id]=!UI.ss.open[d.id];render()},
-  ssCard(d){UI.ss.card=d.id;UI.ss.tab='cards';go('shopper')},
+  ssCard(d){UI.ss.card=d.id;UI.ss.tab='compare';go('shopper')},
   ssShopId(d){const c=compById(d.id);UI.ss.shop=d.id;UI.ss.tab='shop';UI.ss.q=c?'Secret shop '+c.name+' at '+c.community:'';go('shopper')},
   ssShop(){const c=findBuilder(UI.ss.q);if(!c){toast(UI.ss.q.trim()?'No builder matches “'+UI.ss.q.trim()+'”. Add it in the Competitor Directory first.':'Type a builder name to shop.',true);return}UI.ss.shop=c.id;render()},
   ssTask(d){const e=shopEvents(90).find(x=>x.id===d.ev),rec=apptById(d.pid)||(S.prospects||[]).find(p=>p.id===d.pid);if(!rec)return;rec.tasks=rec.tasks||[];if(rec.tasks.some(t=>t.ev===d.ev))return;rec.tasks.push({text:'Follow up: '+(e?e.title:'competitor change'),due:TODAY,done:false,ev:d.ev});const nm=rec.customer||rec.name;audit('Added follow-up for '+nm+' from Secret Shopper');save();toast('Follow-up added for '+nm);render()},
   exportShop(d){const c=compById(d.id);offerFile('secret-shop-'+slug(c.name)+'-'+TODAY+'.md',shopMD(d.id))},
+  why(d,el){const r=el.getBoundingClientRect(),W=window.innerWidth,H=window.innerHeight,up=r.bottom>H-240;UI.tip={id:d.id,k:d.k,left:Math.max(12,Math.min(r.left,W-312)),top:up?r.top-8:r.bottom+8,up};renderTip()},
+  ins(d){UI.pop=null;pushDrawer({type:'ins',id:d.id})},
+  prep(d){const a=apptById(d.id);if(!a)return;if(!a.briefing){a.briefing=buildBriefing(a);audit('Generated briefing for '+a.customer);save();toast('Briefing prepared from current records')}UI.stack.push({type:'prep',id:a.id});render()},
+  prepStep(d,el){const a=apptById(d.id);a.prepSteps=a.prepSteps||{};a.prepSteps[d.i]=el.checked;if(el.checked&&prepCount(a)===5&&!a.prepDone)toast('All five steps reviewed. Mark preparation complete when you’re ready.');save();render()},
+  task2(d,el){const rec=d.src==='appt'?apptById(d.id):(S.prospects||[]).find(p=>p.id===d.id);if(!rec||!rec.tasks||!rec.tasks[+d.i])return;rec.tasks[+d.i].done=el.checked;audit('Completed task for '+(rec.customer||rec.name));save();toast('Task completed');render()},
+  scrollTo(d){const el=document.getElementById(d.id);if(el){el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});el.focus({preventScroll:true})}},
+  toolsTab(d){UI.tools.tab=d.tab;render()},
+  ssHow(){UI.how=!UI.how;saveUI();render()},
+  ssfReset(){UI.ss.qf={comp:'all',cat:'all',conf:'any',fresh:'all'};render()},
+  demoHide(){UI.demoHidden=true;saveUI();render()},
+  demoShow(){UI.demoHidden=false;saveUI();render()},
+  cmpBaseBtn(d){UI.cmp.base=d.id;render()},
+  cmpClear(){UI.cmp.comp='all';render()},
+  cmpProd(d){const p=prodById(d.id);if(!p)return;const e=closestEmp(p)||S.empire.filter(x=>x.type===p.type).sort((a,b)=>Math.abs(a.lot-p.lot)-Math.abs(b.lot-p.lot))[0];if(e)UI.cmp.base=e.id;UI.cmp.comp=p.compId;go('comparison')},
+  cmpObs(d){const o=obsById(d.id);if(!o)return;if(o.prodId)return A.cmpProd({id:o.prodId});UI.cmp.comp=o.compId;go('comparison')},
   printShop(){const r=document.getElementById('shop-report');printHTML('Secret shop',r?r.innerHTML:'')},
   removeDemo(){confirmBox('Remove demo records','This removes every record marked Demo: fictional builders, products, observations and customers. Candidate builders and anything you added stay.','Remove demo records',()=>{const dc=new Set(S.competitors.filter(c=>c.demo).map(c=>c.id));S.competitors=S.competitors.filter(c=>!c.demo);S.products=S.products.filter(p=>!p.demo&&!dc.has(p.compId));S.obs=S.obs.filter(o=>!o.demo&&!dc.has(o.compId));S.appts=S.appts.filter(a=>!a.demo);S.prospects=(S.prospects||[]).filter(p=>!p.demo);UI.cmp.sel=[];audit('Removed demo records');save();toast('Demo records removed')},true)},
   resetDemo(){confirmBox('Reset demo','This restores the original demo data and discards every change made in this browser.','Reset',()=>{S=seed();UI.cmp.sel=[];UI.stack=[];save();toast('Demo data reset')},true)}
 };
 document.addEventListener('click',e=>{
   const t=e.target.closest('[data-a]');
+  if(UI.tip&&!(t&&t.dataset.a==='why')&&!(e.target.closest('.tip')&&!t)){UI.tip=null;renderTip()}
   if(!t){if(UI.pop&&!e.target.closest('.pop')){UI.pop=null;renderTop()}if(!e.target.closest('.search')){const b=document.getElementById('sres');b&&(b.innerHTML='')}return}
   if(t.disabled)return;const fn=A[t.dataset.a];if(fn)fn(t.dataset,t,e);
 });
 document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&UI.tip){UI.tip=null;renderTip();return}
   if(e.key==='Escape'){if(UI.modal){A.closeModal()}else if(UI.stack.length){UI.stack.pop();renderLayer()}else if(UI.pop){UI.pop=null;renderTop()}}
   if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.f==='ssq'){A.ssShop();return}
   if(e.key==='Enter'&&e.target.matches&&e.target.matches('tr[data-a]')){const fn=A[e.target.dataset.a];fn&&fn(e.target.dataset,e.target,e)}
 });
 const F={range:v=>UI.range=+v,actComp:v=>UI.actComp=v,role:v=>{UI.role=v;saveUI();UI.stack=[];UI.appt.consultant='all';toast('Viewing as '+ROLES[v].name+', '+v)},dirq:v=>UI.dir.q=v,dirStatus:v=>UI.dir.status=v,
   cmpBase:v=>UI.cmp.base=v,cmpComp:v=>UI.cmp.comp=v,cmpType:v=>UI.cmp.type=v,cmpConf:v=>UI.cmp.minConf=v,cmpSort:v=>UI.cmp.sort=v,verq:v=>UI.ver.q=v,apptq:v=>UI.appt.q=v,apptCons:v=>UI.appt.consultant=v,apptDate:v=>{if(v){UI.appt.view='date';UI.appt.date=v}},
-  ssWin:v=>UI.ss.win=+v,ssCardSel:v=>UI.ss.card=v,ssWcComp:v=>UI.ss.wcComp=v,ssWcMin:v=>UI.ss.wcMin=v,ssq:v=>UI.ss.q=v};
+  ssWin:v=>UI.ss.win=+v,ssCardSel:v=>UI.ss.card=v,ssWcComp:v=>UI.ss.wcComp=v,ssWcMin:v=>UI.ss.wcMin=v,ssq:v=>UI.ss.q=v,ssfComp:v=>UI.ss.qf.comp=v,ssfCat:v=>UI.ss.qf.cat=v,ssfConf:v=>UI.ss.qf.conf=v,ssfFresh:v=>UI.ss.qf.fresh=v};
 const FB={dirArch:c=>UI.dir.archived=c,cmpUnlike:c=>UI.cmp.hideUnlike=c,cmpCand:c=>UI.cmp.showCand=c};
 function onField(e){
   const t=e.target;if(!t||!t.closest)return;
@@ -1417,6 +1848,8 @@ function onField(e){
   if(FB[k]){if(e.type==='change'){FB[k](t.checked);render()}return}
   if(F[k]){const isText=t.type==='search'||t.type==='text';if(isText!==(e.type==='input'))return;F[k](t.value);render()}
 }
+document.addEventListener('scroll',()=>{if(UI.tip){UI.tip=null;renderTip()}},true);
+document.addEventListener('toggle',e=>{const d=e.target;if(d&&d.dataset&&d.dataset.k)UI.open[d.dataset.k]=d.open},true);
 document.addEventListener('input',onField);document.addEventListener('change',onField);
 
 render();
